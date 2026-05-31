@@ -1,0 +1,149 @@
+[
+  {
+    "id": "cap_mplrnqj8_jdjr5x",
+    "selector": "div.elementor-element",
+    "label": "VELKOMMEN TIL WESTMANS PRODUKTER TIL LEJ…",
+    "tag": "div",
+    "url": "https://westmans.se/",
+    "title": "Velkommen til Westmans - Westmans",
+    "timestamp": "2026-05-25T22:16:55.316Z",
+    "innerText": "VELKOMMEN TIL WESTMANS\nPRODUKTER TIL LEJE TIL FESTER, KONFERENCER OG MESSER\nLEJ ALT TIL DIT ARRANGEMENT I DAG!",
+    "outerHTML": "<div class=\"elementor-element elementor-element-7a2eb9b e-con-full e-flex e-con e-child\" data-id=\"7a2eb9b\" data-element_type=\"container\" data-e-type=\"container\">\n\t\t\t\t<div class=\"elementor-element elementor-element-3398f78 elementor-widget elementor-widget-heading\" data-id=\"3398f78\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<h1 class=\"elementor-heading-title elementor-size-default\"><font dir=\"auto\" style=\"vertical-align: inherit;\"><font dir=\"auto\" style=\"vertical-align: inherit;\">VELKOMMEN TIL WESTMANS</font></font></h1>\t\t\t\t</div>\n\t\t\t\t<div class=\"elementor-element elementor-element-e1ef90b elementor-widget elementor-widget-text-editor\" data-id=\"e1ef90b\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">\n\t\t\t\t\t\t\t\t\t<h3><font dir=\"auto\" style=\"vertical-align: inherit;\"><font dir=\"auto\" style=\"vertical-align: inherit;\">PRODUKTER TIL LEJE TIL FESTER, KONFERENCER OG MESSER</font></font></h3>\t\t\t\t\t\t\t\t</div>\n\t\t\t\t<div class=\"elementor-element elementor-element-bf03251 elementor-widget elementor-widget-button\" data-id=\"bf03251\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"button.default\">\n\t\t\t\t\t\t\t\t\t\t<a class=\"elementor-button elementor-button-link elementor-size-sm\" href=\"https://westmans.se/hyra/\">\n\t\t\t\t\t\t<span class=\"elementor-button-content-wrapper\">\n\t\t\t\t\t\t\t\t\t<span class=\"elementor-button-text\"><font dir=\"auto\" style=\"vertical-align: inherit;\"><font dir=\"auto\" style=\"vertical-align: inherit;\">Lej alt til dit arrangement i dag!</font></font></span>\n\t\t\t\t\t</span>\n\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t</div>",
+    "rect": {
+      "x": 0,
+      "y": 466,
+      "width": 2486,
+      "height": 295
+    },
+    "computedStyles": {
+      "display": "flex",
+      "position": "relative",
+      "top": "0px",
+      "right": "0px",
+      "bottom": "0px",
+      "left": "0px",
+      "width": "2485.5px",
+      "height": "294.539px",
+      "padding": "40px",
+      "border": "0px none rgb(51, 51, 51)",
+      "box-sizing": "border-box",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(51, 51, 51)",
+      "font-family": "Montserrat, sans-serif",
+      "font-size": "18px",
+      "line-height": "27px",
+      "text-decoration": "none",
+      "flex-direction": "column",
+      "align-items": "center",
+      "gap": "25px",
+      "transition": "background 0.3s, border 0.3s, box-shadow 0.3s, transform 0.4s"
+    },
+    "cssRules": [
+      {
+        "selector": "*, ::after, ::before",
+        "css": "box-sizing: border-box;",
+        "media": "all"
+      },
+      {
+        "selector": "*, ::after, ::before",
+        "css": "background: transparent !important; box-shadow: none !important; color: rgb(0, 0, 0) !important; text-shadow: none !important;",
+        "media": "print"
+      },
+      {
+        "selector": ".elementor *, .elementor ::after, .elementor ::before",
+        "css": "box-sizing: border-box;",
+        "media": "all"
+      },
+      {
+        "selector": ".elementor-element",
+        "css": "--flex-direction: initial; --flex-wrap: initial; --justify-content: initial; --align-items: initial; --align-content: initial; --gap: initial; --flex-basis: initial; --flex-grow: initial; --flex-shrink: initial; --order: initial; --align-self: initial; align-self: var(--align-self); flex-basis: var(--flex-basis); flex-grow: var(--flex-grow); flex-shrink: var(--flex-shrink); order: var(--order);",
+        "media": "all"
+      },
+      {
+        "selector": ".elementor-element:where(.e-con-full, .elementor-widget)",
+        "css": "align-content: var(--align-content); align-items: var(--align-items); flex-direction: var(--flex-direction); flex-wrap: var(--flex-wrap); gap: var(--row-gap) var(--column-gap); justify-content: var(--justify-content);",
+        "media": "all"
+      },
+      {
+        "selector": ".e-con",
+        "css": "--border-radius: 0; --border-top-width: 0px; --border-right-width: 0px; --border-bottom-width: 0px; --border-left-width: 0px; --border-style: initial; --border-color: initial; --container-widget-width: 100%; --container-widget-height: initial; --container-widget-flex-grow: 0; --container-widget-align-self: initial; --content-width: min(100%,var(--container-max-width,1140px)); --width: 100%; --min-height: initial; --height: auto; --text-align: initial; --margin-top: 0px; --margin-right: 0px; --margin-bottom: 0px; --margin-left: 0px; --padding-top: var(--container-default-padding-top,10px); --padding-right: var(--container-default-padding-right,10px); --padding-bottom: var(--container-default-padding-bottom,10px); --padding-left: var(--container-default-padding-left,10px); --position: relative; --z-index: revert; --overflow: visible; --gap: var(--widgets-spacing,20px); --row-gap: var(--widgets-spacing-row,20px); --column-gap: var(--widgets-spacing-column,20px); --overlay-mix-blend-mode: initial; --overlay-opacity: 1; --overlay-transition: 0.3s; --e-con-grid-template-columns: repeat(3,1fr); --e-con-grid-template-rows: repeat(2,1fr); border-radius: var(--border-radius); height: var(--height); min-height: var(--min-height); min-width: 0px; overflow: var(--overflow); position: var(--position); width: var(--width); z-index: var(--z-index); --flex-wrap-mobile: wrap;",
+        "media": "all"
+      },
+      {
+        "selector": ".e-con:where(:not(.e-div-block-base))",
+        "css": "transition: background var(--background-transition,.3s),border var(--border-transition,.3s),box-shadow var(--border-transition,.3s),transform var(--e-con-transform-transition-duration,.4s);",
+        "media": "all"
+      },
+      {
+        "selector": ".e-con",
+        "css": "--margin-block-start: var(--margin-top); --margin-block-end: var(--margin-bottom); --margin-inline-start: var(--margin-left); --margin-inline-end: var(--margin-right); --padding-inline-start: var(--padding-left); --padding-inline-end: var(--padding-right); --padding-block-start: var(--padding-top); --padding-block-end: var(--padding-bottom); --border-block-start-width: var(--border-top-width); --border-block-end-width: var(--border-bottom-width); --border-inline-start-width: var(--border-left-width); --border-inline-end-width: var(--border-right-width);",
+        "media": "all"
+      },
+      {
+        "selector": ".e-con",
+        "css": "margin-block-end: var(--margin-block-end); margin-block-start: var(--margin-block-start); margin-inline-end: var(--margin-inline-end); margin-inline-start: var(--margin-inline-start); padding-inline-end: var(--padding-inline-end); padding-inline-start: var(--padding-inline-start);",
+        "media": "all"
+      },
+      {
+        "selector": ".e-con.e-flex",
+        "css": "--flex-direction: column; --flex-basis: auto; --flex-grow: 0; --flex-shrink: 1; flex: var(--flex-grow) var(--flex-shrink) var(--flex-basis);",
+        "media": "all"
+      },
+      {
+        "selector": ".e-con-full, .e-con > .e-con-inner",
+        "css": "padding-block-end: var(--padding-block-end); padding-block-start: var(--padding-block-start); text-align: var(--text-align);",
+        "media": "all"
+      },
+      {
+        "selector": ".e-con-full.e-flex, .e-con.e-flex > .e-con-inner",
+        "css": "flex-direction: var(--flex-direction);",
+        "media": "all"
+      },
+      {
+        "selector": ".e-con, .e-con > .e-con-inner",
+        "css": "display: var(--display);",
+        "media": "all"
+      },
+      {
+        "selector": ".e-con.e-flex",
+        "css": "--width: 100%; --flex-wrap: var(--flex-wrap-mobile);",
+        "media": "(max-width: 767px)"
+      },
+      {
+        "selector": "html *",
+        "css": "transition-delay: 0s !important; transition-duration: 0s !important;",
+        "media": "(prefers-reduced-motion: reduce)"
+      },
+      {
+        "selector": ".e-con",
+        "css": "--container-max-width: 1200px; --container-default-padding-top: 40px; --container-default-padding-right: 40px; --container-default-padding-bottom: 40px; --container-default-padding-left: 40px;",
+        "media": "all"
+      },
+      {
+        "selector": ".elementor-element",
+        "css": "--widgets-spacing: 25px 25px; --widgets-spacing-row: 25px; --widgets-spacing-column: 25px;",
+        "media": "all"
+      },
+      {
+        "selector": ".e-con",
+        "css": "--container-max-width: 1024px; --container-default-padding-top: 20px; --container-default-padding-right: 20px; --container-default-padding-bottom: 20px; --container-default-padding-left: 20px;",
+        "media": "(max-width: 1024px)"
+      },
+      {
+        "selector": ".e-con",
+        "css": "--container-max-width: 767px; --container-default-padding-top: 20px; --container-default-padding-right: 20px; --container-default-padding-bottom: 20px; --container-default-padding-left: 20px;",
+        "media": "(max-width: 767px)"
+      },
+      {
+        "selector": ".elementor-element, .elementor-lightbox",
+        "css": "--swiper-theme-color: #000; --swiper-navigation-size: 44px; --swiper-pagination-bullet-size: 6px; --swiper-pagination-bullet-horizontal-gap: 6px;",
+        "media": "all"
+      },
+      {
+        "selector": ".elementor-2231 .elementor-element.elementor-element-7a2eb9b",
+        "css": "--display: flex; --align-items: center; --container-widget-width: calc( ( 1 - var( --container-widget-flex-grow ) ) * 100% );",
+        "media": "all"
+      }
+    ]
+  }
+]
