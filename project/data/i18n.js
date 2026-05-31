@@ -138,6 +138,7 @@ window.I18N = {
       brand_tag: "Scandinavia · Danmark",
       made: "Skabt med omhu i København.",
       top_bar: "Showroom: Tempovej 41, Ballerup — Man–fre 08–17",
+      top_bar_malmo: "Showroom: Bjurögatan 46, Malmø — Man–fre 08–17",
     },
     rfq: {
       btn: "Få møbelforslag",
@@ -283,6 +284,7 @@ window.I18N = {
       brand_tag: "Scandinavia · Denmark",
       made: "Made with care in Copenhagen.",
       top_bar: "Showroom: Tempovej 41, Ballerup — Mon–Fri 08–17",
+      top_bar_malmo: "Showroom: Bjurögatan 46, Malmö — Mon–Fri 08–17",
     },
     rfq: {
       btn: "Get furniture suggestions",
@@ -428,6 +430,7 @@ window.I18N = {
       brand_tag: "Scandinavia · Danmark",
       made: "Skapad med omsorg i Köpenhamn.",
       top_bar: "Showroom: Tempovej 41, Ballerup — Mån–fre 08–17",
+      top_bar_malmo: "Showroom: Bjurögatan 46, Malmö — Mån–fre 08–17",
     },
     rfq: {
       btn: "Få möbelförslag",

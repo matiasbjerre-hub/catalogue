@@ -105,13 +105,26 @@ function RfqButton() {
 function Header() {
   const { t, lang, setLang } = useI18n();
   const { count, setOpen } = useCart();
+  const cphActive = lang !== "sv";
   return (
     <header className="site-header">
       <div className="site-header__top">
         <div className="wrap">
           <div className="site-header__top-row">
-            <a href="tel:+4531767671">+45 31 76 76 71 — copenhagen@rent.group</a>
-            <span style={{ fontFamily: "Montserrat" }}>{t.footer.top_bar}</span>
+            <span className={cphActive ? "topbar-office topbar-office--active" : "topbar-office"}>
+              <a href="tel:+4531767671">{t.footer.phone}</a>
+              {" — "}
+              <a href="mailto:copenhagen@rent.group">{t.footer.email}</a>
+              {" — "}
+              {t.footer.top_bar}
+            </span>
+            <span className={!cphActive ? "topbar-office topbar-office--active" : "topbar-office"}>
+              <a href="tel:+4640497400">{t.footer.phone_malmo}</a>
+              {" — "}
+              <a href="mailto:malmo@party.rent">{t.footer.email_malmo}</a>
+              {" — "}
+              {t.footer.top_bar_malmo}
+            </span>
           </div>
         </div>
       </div>
