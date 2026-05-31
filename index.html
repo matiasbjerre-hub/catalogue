@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rent.Group Denmark — Catalogue</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="project/styles.css" />
+</head>
+<body style="font-family: Montserrat">
+  <div id="root"></div>
+
+  <!-- React -->
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+  <!-- Data -->
+  <script src="project/data/products.js"></script>
+  <script src="project/data/packshots.js"></script>
+  <script src="project/data/i18n.js"></script>
+
+  <!-- Resolve asset paths to project/ subdirectory -->
+  <script>
+    window.__resources = {
+      logo_rg: "project/assets/rent-group-logo.png",
+      hero_poster: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=2400&auto=format&fit=crop&q=72"
+    };
+
+    // packshots.js defines packshotFor with relative "assets/..." paths.
+    // Wrap it to prepend "project/" so paths resolve from the repo root.
+    (function () {
+      const fn = window.packshotFor;
+      window.packshotFor = function (product) {
+        const url = fn(product);
+        if (url && url.startsWith("assets/")) return "project/" + url;
+        return url;
+      };
+    })();
+  </script>
+
+  <!-- App -->
+  <script type="text/babel" src="project/tweaks-panel.jsx"></script>
+  <script type="text/babel" src="project/src/components.jsx"></script>
+  <script type="text/babel" src="project/src/cart.jsx"></script>
+  <script type="text/babel" src="project/src/app.jsx"></script>
+</body>
+</html>
