@@ -41,26 +41,17 @@ function App() {
 
 }
 
-// ─── RFQ modal button (Fase 5) ─────────────────────────────────────────────
+// ─── RFQ popup button (Fase 5) ─────────────────────────────────────────────
 const RFQ_EXEC_URL = "https://script.google.com/macros/s/AKfycbxQdgRCwMfTghCs4a8uQIfVvkODyUoof_kL7VI6LKZxQBf2floEVr_rAod2FLh1wdB1/exec?mode=web";
 
 function RfqButton() {
   const { t } = useI18n();
   const cart = useCart();
-  const [open, setOpen] = useStateA(false);
-  const iframeRef = useRefA(null);
+  const popupRef = useRefA(null);
+  const [active, setActive] = useStateA(false);
 
   useEffectA(() => {
-    if (!open) return;
-    const sendCart = () => {
-      try {
-        iframeRef.current.contentWindow.postMessage(
-          { type: "cart", items: cart.items },
-          "https://script.google.com"
-        );
-      } catch (err) {}
-    };
-    const timer = setTimeout(sendCart, 2500);
+    if (!active) return;
     const onMsg = (e) => {
       if (!e.data || e.data.type !== "addToCart") return;
       const items = e.data.items || [];
@@ -70,27 +61,43 @@ function RfqButton() {
         if (!prod) return;
         for (let i = 0; i < Math.max(1, item.qty || 1); i++) cart.add(prod);
       });
-      setOpen(false);
+      setActive(false);
+      if (popupRef.current && !popupRef.current.closed) popupRef.current.close();
     };
     window.addEventListener("message", onMsg);
-    return () => { clearTimeout(timer); window.removeEventListener("message", onMsg); };
-  }, [open]);
+    return () => window.removeEventListener("message", onMsg);
+  }, [active]);
+
+  const openRfq = () => {
+    const w = 980, h = 840;
+    const left = Math.round((screen.width - w) / 2);
+    const top  = Math.round((screen.height - h) / 2);
+    const popup = window.open(
+      RFQ_EXEC_URL,
+      "rfq-analyser",
+      `width=${w},height=${h},left=${left},top=${top},resizable=yes,scrollbars=yes`
+    );
+    if (!popup) { window.open(RFQ_EXEC_URL, "_blank"); return; }
+    popupRef.current = popup;
+    setActive(true);
+    const cartItems = cart.items;
+    const sendCart = () => {
+      try { popup.postMessage({ type: "cart", items: cartItems }, "*"); } catch (err) {}
+    };
+    let attempts = 0;
+    const poll = setInterval(() => {
+      attempts++;
+      if (popup.closed) { clearInterval(poll); setActive(false); return; }
+      if (attempts <= 10) sendCart();
+      else clearInterval(poll);
+    }, 800);
+  };
 
   const label = t.rfq ? t.rfq.btn : "Få møbelforslag";
-  const closeLabel = t.rfq ? t.rfq.close : "Luk";
-
   return (
-    <React.Fragment>
-      <button className="rfq-btn" onClick={() => setOpen(true)}>{label}</button>
-      {open && (
-        <div className="rfq-overlay" onClick={() => setOpen(false)}>
-          <div className="rfq-modal" onClick={(e) => e.stopPropagation()}>
-            <button className="rfq-close" onClick={() => setOpen(false)} aria-label={closeLabel}>✕</button>
-            <iframe ref={iframeRef} src={RFQ_EXEC_URL} className="rfq-iframe" title="RFQ Analyser" />
-          </div>
-        </div>
-      )}
-    </React.Fragment>
+    <button className={"rfq-btn" + (active ? " rfq-btn--active" : "")} onClick={openRfq}>
+      {label}
+    </button>
   );
 }
 
