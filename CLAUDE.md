@@ -1,5 +1,12 @@
 # Catalogue — Claude arbejdsregler
 
+## Start af hver session
+Kør altid dette før noget andet — uanset maskine eller session:
+```bash
+git pull origin main
+```
+Derved er CLAUDE.md og alle kildefiler altid opdaterede fra starten.
+
 ## Git-workflow
 - Push direkte til `main` — ingen PRs, ingen feature branches
 - Enkeltudvikler-projekt, PR-workflow giver ingen værdi her
