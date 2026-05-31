@@ -41,6 +41,59 @@ function App() {
 
 }
 
+// ─── RFQ modal button (Fase 5) ─────────────────────────────────────────────
+const RFQ_EXEC_URL = "https://script.google.com/macros/s/AKfycbxQdgRCwMfTghCs4a8uQIfVvkODyUoof_kL7VI6LKZxQBf2floEVr_rAod2FLh1wdB1/exec?mode=web";
+
+function RfqButton() {
+  const { t } = useI18n();
+  const cart = useCart();
+  const [open, setOpen] = useStateA(false);
+  const iframeRef = useRefA(null);
+
+  useEffectA(() => {
+    if (!open) return;
+    const sendCart = () => {
+      try {
+        iframeRef.current.contentWindow.postMessage(
+          { type: "cart", items: cart.items },
+          "https://script.google.com"
+        );
+      } catch (err) {}
+    };
+    const timer = setTimeout(sendCart, 2500);
+    const onMsg = (e) => {
+      if (!e.data || e.data.type !== "addToCart") return;
+      const items = e.data.items || [];
+      items.forEach((item) => {
+        if (!item.art) return;
+        const prod = window.PRODUCTS.find((p) => String(p.art) === String(item.art));
+        if (!prod) return;
+        for (let i = 0; i < Math.max(1, item.qty || 1); i++) cart.add(prod);
+      });
+      setOpen(false);
+    };
+    window.addEventListener("message", onMsg);
+    return () => { clearTimeout(timer); window.removeEventListener("message", onMsg); };
+  }, [open]);
+
+  const label = t.rfq ? t.rfq.btn : "Få møbelforslag";
+  const closeLabel = t.rfq ? t.rfq.close : "Luk";
+
+  return (
+    <React.Fragment>
+      <button className="rfq-btn" onClick={() => setOpen(true)}>{label}</button>
+      {open && (
+        <div className="rfq-overlay" onClick={() => setOpen(false)}>
+          <div className="rfq-modal" onClick={(e) => e.stopPropagation()}>
+            <button className="rfq-close" onClick={() => setOpen(false)} aria-label={closeLabel}>✕</button>
+            <iframe ref={iframeRef} src={RFQ_EXEC_URL} className="rfq-iframe" title="RFQ Analyser" />
+          </div>
+        </div>
+      )}
+    </React.Fragment>
+  );
+}
+
 // ─── Header ────────────────────────────────────────────────────────────────
 function Header() {
   const { t, lang, setLang } = useI18n();
@@ -72,6 +125,7 @@ function Header() {
                 </button>
               )}
             </div>
+            <RfqButton />
             <button className="cart-btn" onClick={() => setOpen(true)}>
               {t.nav.cart}
               <span className="count">{count}</span>

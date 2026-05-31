@@ -136,6 +136,10 @@ window.I18N = {
       made: "Skabt med omhu i København.",
       top_bar: "Showroom: Tempovej 41, Ballerup — Man–fre 08–17",
     },
+    rfq: {
+      btn: "Få møbelforslag",
+      close: "Luk",
+    },
   },
 
   en: {
@@ -274,6 +278,10 @@ window.I18N = {
       made: "Made with care in Copenhagen.",
       top_bar: "Showroom: Tempovej 41, Ballerup — Mon–Fri 08–17",
     },
+    rfq: {
+      btn: "Get furniture suggestions",
+      close: "Close",
+    },
   },
 
   sv: {
@@ -411,6 +419,10 @@ window.I18N = {
       brand_tag: "Scandinavia · Danmark",
       made: "Skapad med omsorg i Köpenhamn.",
       top_bar: "Showroom: Tempovej 41, Ballerup — Mån–fre 08–17",
+    },
+    rfq: {
+      btn: "Få möbelförslag",
+      close: "Stäng",
     },
   },
 };
