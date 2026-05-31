@@ -1040,6 +1040,17 @@ a { color: inherit; text-decoration: none; }
   text-transform: uppercase;
   color: var(--sand);
 }
+.footer-office {
+  opacity: 0.35;
+  transition: opacity 0.2s;
+}
+.footer-office--active {
+  opacity: 1;
+}
+.footer-office-divider {
+  margin: 14px 0;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
 .footer-legal {
   margin-top: 64px; padding-top: 24px;
   border-top: 1px solid rgba(255,255,255,0.12);

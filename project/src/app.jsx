@@ -519,7 +519,8 @@ function Testimonials() {
 
 // ─── Footer ────────────────────────────────────────────────────────────────
 function Footer() {
-  const { t } = useI18n();
+  const { t, lang } = useI18n();
+  const cphActive = lang !== "sv";
   return (
     <footer className="site-footer" id="contact">
       <div className="wrap">
@@ -530,13 +531,27 @@ function Footer() {
           </div>
           <div>
             <h4>{t.footer.addr_label}</h4>
-            {t.footer.addr_lines.map((l, i) => <div key={i}>{l}</div>)}
-            <div style={{ marginTop: 8, opacity: 0.6 }}>{t.footer.hours}</div>
+            <div className={cphActive ? "footer-office footer-office--active" : "footer-office"}>
+              {t.footer.addr_lines.map((l, i) => <div key={i}>{l}</div>)}
+              <div style={{ marginTop: 8, opacity: 0.6 }}>{t.footer.hours}</div>
+            </div>
+            <div className="footer-office-divider" />
+            <div className={!cphActive ? "footer-office footer-office--active" : "footer-office"}>
+              {t.footer.addr_lines_malmo.map((l, i) => <div key={i}>{l}</div>)}
+              <div style={{ marginTop: 8, opacity: 0.6 }}>{t.footer.hours}</div>
+            </div>
           </div>
           <div>
             <h4>{t.footer.direct}</h4>
-            <a href="tel:+4531767671">{t.footer.phone}</a><br />
-            <a href="mailto:copenhagen@rent.group">{t.footer.email}</a>
+            <div className={cphActive ? "footer-office footer-office--active" : "footer-office"}>
+              <a href="tel:+4531767671">{t.footer.phone}</a><br />
+              <a href="mailto:copenhagen@rent.group">{t.footer.email}</a>
+            </div>
+            <div className="footer-office-divider" />
+            <div className={!cphActive ? "footer-office footer-office--active" : "footer-office"}>
+              <a href="tel:+4640497400">{t.footer.phone_malmo}</a><br />
+              <a href="mailto:malmo@party.rent">{t.footer.email_malmo}</a>
+            </div>
           </div>
           <div>
             <h4>{t.footer.catalogue_label}</h4>
