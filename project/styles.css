@@ -130,7 +130,7 @@ a { color: inherit; text-decoration: none; }
 }
 .site-header__top-row a:hover { color: var(--ink); }
 .topbar-office { color: rgba(0,0,0,0.3); transition: color 0.2s; }
-.topbar-office--active { color: var(--muted); }
+.topbar-office--active { color: var(--muted); font-weight: 600; }
 .topbar-office a { color: inherit; }
 .site-header__row {
   display: grid;
@@ -1049,6 +1049,7 @@ a { color: inherit; text-decoration: none; }
 }
 .footer-office--active {
   opacity: 1;
+  font-weight: 600;
 }
 .footer-office-divider {
   margin: 14px 0;
