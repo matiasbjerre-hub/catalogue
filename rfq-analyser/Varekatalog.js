@@ -36,199 +36,395 @@ const LOCAL_STOCK = "1007,1040,1122,1123,1133,1193,2005,2037,2039,2054,2056,2085
 // ─── SERVER-SIDE: tekstkatalog til AI-prompt ─────────────────────────────────
 
 const CATALOGUE = `STOLE (Dinner & Conference):
-HAY About A Chair White/Oak Art.70491 DKK 207
-HAY About A Chair Black/Oak Art.70491 DKK 207
-HAY About A Chair Swivel Black/pepper-salt Art.4628 DKK 271
+Hay About A Chair White/Oak Art.70491 DKK 207
+Hay About A Chair Black/Oak Art.70492 DKK 207
+Hay About A Chair Swivel Black/Pepper-Salt Art.4628 DKK 271
 DSW Eames Chair White/Maple Art.70251 DKK 165
 DSW Eames Chair Mustard/Maple Art.70252 DKK 165
-DSW Eames Chair Mustard/Maple Art.70253 DKK 165
-DSW Eames Chair SeaBlue/Maple Art.70289 DKK 165
-HAY Hee Dining Chair Black Art.4647 DKK 123
-Panton Design Chair White Art.2167 DKK 145
-Crossback Chair Whitewash Art.2037 DKK 96
-PRDK Industrial Chair Black Art.194766 DKK 162
-PRDK Industrial Stool Black Art.194772 DKK 105
-Alanya Bistro Chair Chrome Art.1040 DKK 49
-Folding Chair with Cushion White Art.wm1123 DKK (pris mangler)
-Chiavari Chair with Cushion White Art.wm1115 DKK (pris mangler)
+DSW Eames Chair Sea Blue/Maple Art.70289 DKK 165
+Hay Hee Dining Chair Black Art.4647 DKK 123
 Skool Chair Wood/Black Art.2039 DKK 71
+Alanya Bistro Chair Chrome Art.1040 DKK 49
+Panton Design Chair White Art.2167 DKK 162
+PRDK Industrial Chair Black Art.194766 DKK 145
+PRDK Industrial Stool Black Art.194772 DKK 105
+Crossback Chair Whitewash Art.2037 DKK 96
+Folding Chair w. Cushion White/White Art.wm1123 DKK 26
+Chiavari Chair w. Cushion White/White Art.wm1115 DKK 70
 Chairik Model 107 Black/Chrome Art.4611 DKK 81
 Chairik Model 107 White/Chrome Art.4610 DKK 81
-Chairik Model 107 with cushion Black Art.70354 DKK 101
-Chairik Model 107 with cushion White Art.70351 DKK 101
+Chairik Model 107 cushion Black/Chrome Art.70351 DKK 101
+Chairik Model 107 cushion White/Chrome Art.70354 DKK 101
 Nancy Design Chair White Art.2185 DKK 67
 Nancy Design Chair Black Art.2186 DKK 67
 Folding Chair Black/Metal Art.1007 DKK 20
 Dallas Upholstered Chair Black/Metal Art.2005 DKK 52
-Linda Chair Black/Chrome Art.wm1104 DKK (pris mangler)
+Linda Chair Black/Chrome Art.wm1104 DKK 25
+DSW Eames Chair Mustard/Maple Art.70253 DKK 165
 
 BARSTOLE:
-HAY About A Stool White/Oak Art.71150 DKK 266
-HAY About A Stool White/Oak Art.71151 DKK 266
-HAY About A Stool White/Black Art.71152 DKK 266
-HAY About A Stool Black/Black Art.71153 DKK 266
-Padova Bar Stool Leather white Art.2054 DKK 200
-Padova Bar Stool Leather black Art.2056 DKK 200
+Padova Bar Stool Leather, White Art.2054 DKK 200
+Padova Bar Stool Leather, Black Art.2056 DKK 200
+Hay About A Stool White/Oak Art.71150 DKK 266
+Hay About A Stool Black/Black Art.71153 DKK 266
 Pedrali Kuadra Barstool White/Chrome Art.192084 DKK 142
 Bonello Barstool White Art.2085 DKK 98
+PRDK Industrial Barstool Metallic Grey Art.194782 DKK 172
+PRDK Industrial Barstool Black Art.194784 DKK 172
 PRDK Industrial Barstool White Art.194783 DKK 172
-PRDK Industrial Barstool Black Art.194782 DKK 172
-PRDK Industrial Barstool Grey Art.194784 DKK 172
-PRDK Upholstered Barstool Cognac/Black Art.192086 DKK (pris mangler)
+PRDK Upholstered Barstool Cognac/Black Art.192086 DKK 198
 Skool Barstool Wood/Black Art.192037 DKK 159
 Lem Adjustable Barstool White/Chrome Art.71061 DKK 244
-HEE Barstool Black Art.4648 DKK 167
+Hee Barstool Black Art.4648 DKK 167
+Hay About A Stool White/Oak (low) Art.71151 DKK 266
+Hay About A Stool White/Black Art.71152 DKK 266
 
 HØJE BORDE & BARBORDE:
-Bristol Bornholm High Table Wood/Black W160xD80xH110 Art.60702 DKK 907
-Bristol Bornholm High Table Wood/Chrome W160xD80xH110 Art.60181 DKK 793
-Sylt High Table Oak/Chrome W160xD80xH110 Art.1960192 DKK 705
-Sylt High Table Oak/Chrome W160xD80xH110 Art.1960772 DKK 793
-Kranich High Table White/Black Ø160 Art.60627 DKK 1069
-St. Tropez Bridge Table White W180xD70xH108 Art.60042 DKK 848
-St. Tropez Bridge Table White W70xD70xH108 Art.60045 DKK 508
-Marseille Bridge Table Black W180xD70xH108 Art.60062 DKK 991
-BRIO High Table Black Ø60 Art.60241 DKK 316
-BRIO High Table White Ø60 Art.60235 DKK 316
-PRDK Bar Table Black Ø60 Art.192588 DKK 166
-PRDK High Table Black Ø70 Art.192589 DKK 166
-Ibiza High Table White/Chrome Ø80 Art.60074 DKK 283
-Ibiza High Table White/Chrome W80xD80 Art.60076 DKK 306
-Helsinki Bar Table White Ø80 Art.1133 DKK 113
-Helsinki Bar Table w.Cover White Art.1133+2671 DKK 315
-Bornholm Bar Table Wood/Chrome W80xD80 Art.60183 DKK 394
-Sylt Bar Table Oak/Chrome W80xD80 Art.60194 DKK 345
-Kubus Bar Table White W45xD45 Art.192655 DKK 350
-Kubus Bar Table White W45xD45 Art.2658 DKK 365
-Kubus Bar Table Black W40xD40 Art.192658 DKK 340
-Kubus Bar Table Grey W40xD40 Art.192668 DKK 340
-Kubus Bar Table Brown W40xD40 Art.2655 DKK 365
-Kubus LED Bar Table White+LED Art.2604 DKK 740
+Sylt High Table Oak/Chrome Art.1960192 DKK 705
+Marseille High Bridge Table Black Art.60062 DKK 991
+St. Tropez High Bridge Table White Art.60042 DKK 848
+Bristol Bornholm High Table Wood/Black Art.60702 DKK 907
+Bornholm High Table Wood/Chrome Art.60181 DKK 793
+Kranich High Table White/Black Art.60627 DKK 1069
+PRDK High Table Black Art.192588 DKK 166
+Brio High Table Black Art.60241 DKK 316
+Brio High Table White Art.60235 DKK 316
+Standing Table Black Laminate Art.wm1008 DKK 142
+Ibiza High Table White/Chrome Art.60074 DKK 283
+Helsinki Bar Table + LED White + Colored LED Art.1133-LED DKK 623
+Kubus Bar Table White Art.192655 DKK 350
+Kubus Bar Table Black Art.192658 DKK 340
+Kubus LED Bar Table White + LED Art.2604 DKK 740
+Kubus Bornholm Piedestal Wood Art.6595 DKK 1627
+Bristol Sylt High Table Oak/Chrome Art.1960772 DKK 793
+St. Tropez Bridge Table (high) White Art.60045 DKK 508
+PRDK High Table Black Art.192589 DKK 166
+Bornholm Bar Table Wood/Chrome Art.60183 DKK 394
+Sylt Bar Table Oak/Chrome Art.60194 DKK 345
+Ibiza High Table White/Chrome Art.60076 DKK 306
+Bar Table Wood Art.wm1027 DKK 79
+Helsinki Bar Table White Art.1133 DKK 113
+Helsinki Bar Table + Cover White Art.1133-COVER DKK 315
+Kubus Bar Table White Art.2658 DKK 365
+Kubus Bar Table Grey Art.192668 DKK 340
+Kubus Bar Table Brown Art.2655 DKK 365
 Kubus Bornholm Bar Table Wood Art.6582 DKK 483
 
 SPISE- & BISTROBORDE:
-Bristol Bornholm Dinner Table Wood/Black W160xD80xH78 Art.60701 DKK 848
-Bornholm Dinner Table Wood/Chrome W160xD80xH78 Art.60180 DKK 759
-Sylt Dinner Table Oak/Chrome W160xD80xH78 Art.1960191 DKK 670
-Bristol Sylt Dinner Table Oak/Black W160xD80xH78 Art.1960771 DKK 759
-St. Tropez Bridge Table White W180xD70xH76 Art.60041 DKK 809
-Astana Dinner Table Black W160xD80xH73 Art.191377 DKK 312
-Astana Dinner Table Black W70xD70xH73 Art.191378 DKK 246
-PRDK Nordisk Dinner Table Black Ø110 Art.1960236 DKK 624
-PRDK Nordisk Dinner Table White Ø110 Art.1960238 DKK 624
-Kranich Dinner Table White/Black Ø160 Art.60628 DKK 922
-Round Dinner Table Wood Ø150 Art.1122 DKK 118
-Round Dinner Table Wood Ø180 Art.1123 DKK 177
-Nordisk Bistro Table Black Ø60 Art.1960309 DKK 229
-Nordisk Bistro Table White Ø60 Art.1960233 DKK 204
-BRIO Bistro Table White Ø60 Art.60233 DKK 246
-Berliner Table Black W220xD67xH76 Art.1960520 DKK 144
-Berliner Bench Black W220xD36xH43 Art.1960521 DKK 38
-Bench Table Black W180xD70xH76 Art.wm1025 DKK 144
+Nordisk Bistro Table Black Art.1960309 DKK 229
+Nordisk Bistro Table White Art.1960233 DKK 204
+Brio Bistro Table White Art.60234 DKK 295
+Bristol Bornholm Dinner Wood/Black Art.60701 DKK 848
+Bornholm Dinner Table Wood/Chrome Art.60180 DKK 759
+Sylt Dinner Table Oak/Chrome Art.1960191 DKK 670
+St. Tropez Bridge Table White Art.60041 DKK 809
+Astana 160 Dinner Black Art.191377 DKK 312
+PRDK Nordisk Dinner Table White Art.1960238 DKK 624
+Kranich Dinner Table White/Black Art.60628 DKK 922
+Round Dinner Table Wood Art.1122 DKK 118
+Round Dinner Table Wood Art.1123 DKK 177
+Berliner Table & Bench Set Black Art.1960520-SET DKK 220
+Bench Table Black Art.wm1025 DKK 144
+Table Wood Art.1127 DKK 89
+Folding Table, Plastic Grey Art.191127 DKK 88
+Nordisk Bistro Table Black Art.60239 DKK 247
+Brio Bistro Table White Art.60233 DKK 246
+Nordisk Bistro Table White (square) Art.1960234 DKK 239
+Nordisk Bistro Table Black (square) Art.1960240 DKK 239
+PRDK Nordisk Dinner Table Black Art.1960236 DKK 624
+Bristol Sylt Dinner Table Oak/Black Art.1960771 DKK 759
+Astana 70 Dinner Black Art.191378 DKK 246
+St. Tropez Bridge Table White (small) Art.60044 DKK 467
+Lasa Bistro Table White/Chrome Art.191134 DKK 132
+Lasa Bistro Table Black/Chrome Art.191135 DKK 132
+Nikla Bistro Table White/Chrome Art.191112 DKK 148
+Berliner Table Black Art.1960520 DKK 144
+Berliner Bench Black Art.1960521 DKK 38
+Bench Black Art.wm1026 DKK 38
+Table Wood Art.1126 DKK 74
+Adjustable Plastic Table White (large) Art.wm1030 DKK 150
+Adjustable Plastic Table White (medium) Art.wm1031 DKK 115
+Table Wood (large) Art.wm1043 DKK 450
 
 LOUNGEBORDE og side tables:
-Wooden Cube Lounge Table White/Black Art.2656 DKK 227
-Wooden Cube Lounge Table Sylt/Black Art.5092 DKK 276
 Wooden Cube Lounge Table Bornholm/Black Art.6581 DKK 315
-Wooden Cube Lounge Table Dark Wood Art.2653 DKK 226
-Tree Trunk Lounge Table Ø40 Art.4302 DKK 409
-Nordic Touch Lounge Table Black/Grey Ø54 Art.1971567 DKK (pris mangler)
-Nordic Touch Lounge Table Black/Grey Ø72 Art.1971568 DKK (pris mangler)
-HAY Tray Table Black W40xD40 Art.72091 DKK 271
-HAY Tray Table Black W60xD60 Art.72096 DKK 394
-ST. Tropez Lounge Table White W70xD70xH45 Art.60043 DKK 449
-ST. Tropez Lounge Table White W180xD70xH45 Art.60040 DKK 789
-BRIO Lounge Table White Ø60 Art.60231 DKK 217
-BRIO Lounge Table Black Ø60 Art.60237 DKK 227
-PRDK Lounge Table Black Ø60 Art.1960237 DKK 198
-PRDK Lounge Table White Ø60 Art.1960231 DKK 198
+Wooden Cube Lounge Table Dark Wood/Black Art.2653 DKK 226
+Wooden Cube Lounge Table White/Black Art.2656 DKK 227
+Tree Trunk Lounge Table Wood Art.4302 DKK 409
+LED Cube Lounge Table White/LED Art.192601 DKK 376
+Komodo Lounge Table Taupe/Glass top Art.71250 DKK 463
+Granada Lounge Table Black/Glass top Art.71215 DKK 976
+R40 Side Table White Art.194608 DKK 156
+R40 Side Table Black Art.194609 DKK 156
+PRDK Side Table Navy Grey Art.1960250 DKK 252
+Hay Tray Table Black Art.72091 DKK 271
+Hay Tray Table Black Art.72096 DKK 394
+St. Tropez Lounge Table White Art.60040 DKK 789
+Brio Lounge Table White Art.60231 DKK 217
+Wooden Cube Lounge Table Sylt/Black Art.5092 DKK 276
+St. Tropez Lounge Table White Art.60043 DKK 449
+Nordisk Lounge Table Black Art.1960237 DKK 198
+Nordisk Lounge Table White Art.1960231 DKK 198
+Nordisk Lounge Table Black Art.1960242 DKK 220
+Nordisk Lounge Table White Art.1960232 DKK 220
+Brio Lounge Table Black Art.60237 DKK 227
+Brio Lounge Table White Art.60232 DKK 262
 
 LOUNGEMØBLER - LÆNESTOLE & SOFAER:
-HAY About A Lounge Chair Grey/Oak Art.71580 DKK 1316
-HAY About A Lounge Chair Grey/Black Art.71581 DKK 1316
-HAY About A Lounge Chair Petrol/Oak Art.71582 DKK 1316
-HAY About A Lounge Chair Petrol/Black Art.71583 DKK 1316
-HAY About A Lounge Chair Swivel Red/Black Art.71585 DKK 1755
-HAY About A Lounge Chair Swivel Curry/Black Art.71584 DKK 1755
-HAY About A Lounge Sofa Grey/Black W150 Art.71565 DKK 2351
-HAY About A Lounge Sofa Grey/Black W150 Art.71566 DKK 2351
-The Egg Lounge Chair White Yacht Leather Art.4322 DKK 3401
-The Egg Lounge Chair Black Yacht Leather Art.4323 DKK 3401
-The Egg Lounge Chair Beige Yacht Leather Art.4321 DKK 3401
-The Swan Lounge Chair White Yacht Leather Art.3996 DKK 2218
-The Swan Lounge Chair Black Yacht Leather Art.3997 DKK 2218
-The Swan Lounge Chair Beige Yacht Leather Art.3995 DKK 2218
-Nordic Touch Lounge Chair Grey/Black Art.1971564 DKK 726
-Nordic Touch Lounge Sofa Grey/Black W125 Art.1971565 DKK 1227
-Freistil 173 Lounge Chair Navy Blue Art.4983 DKK 779
+Hay About A Lounge Chair Petrol/Oak Art.71582 DKK 1316
+Hay About A Lounge Chair Grey/Black Art.71581 DKK 1316
+Hay Lounge Chair Swivel Red/Black Art.71585 DKK 1316
+Hay About A Lounge Chair Petrol/Black Art.71583 DKK 1316
+Hay Lounge Chair Swivel Curry/Black Art.71584 DKK 1316
+Hay About A Lounge Sofa Grey/Black Art.71565 DKK 2351
+Arne Jacobsen The Egg White Yacht Leather Art.4322 DKK 3401
+Arne Jacobsen The Egg Black Yacht Leather Art.4323 DKK 3401
+Arne Jacobsen The Swan White Yacht Leather Art.3996 DKK 2218
+Arne Jacobsen The Swan Black Yacht Leather Art.3997 DKK 2218
+Arne Jacobsen The Swan Beige Yacht Leather Art.3995 DKK 2218
 Heelack Lounge Chair Black Art.4646 DKK 419
-Hollywood Settee 2-seater White Art.2624 DKK 1085
+Freistil 173 Lounge Chair Navy Blue Art.4983 DKK 779
+Freistil 173 Lounge Chair Bordeaux Red Art.4986 DKK 779
+Freistil 173 Lounge Chair Anthracite Grey Art.4987 DKK 779
+Nordic Touch Lounge Sofa Grey/Black Art.1971565 DKK 1227
+Nordic Touch Lounge Chair Grey/Black Art.1971564 DKK 726
+Soft Peak Beanbag Sand Grey Art.192642 DKK 621
+Soft Peak Beanbag Twist Charcoal Art.192641 DKK 621
 Hollywood Sofa 2-seater White Art.2635 DKK 1518
+Hollywood Settee 2-seater White Art.2624 DKK 1085
 Hollywood Corner Element White Art.2626 DKK 917
-Hollywood Lounge Cube White Art.2613 DKK 217
-Hollywood Lounge Stool White Art.2615 DKK 434
-Hollywood Lounge Stool 2-seater White Art.2617 DKK 592
+Hollywood Lounge-Cube White Art.2613 DKK 217
 Ontario 2-seater Settee Grey Art.5824 DKK 1302
 Ontario Corner Armchair Grey Art.5825 DKK 1085
-Ontario Lounge Cube Grey Art.5815 DKK 483
-Soft Peak Beanbag Twist Charcoal Art.192641 DKK 621
-Soft Peak Beanbag Sand Grey Art.192642 DKK 621
+Ontario Lounge Triangle Grey Art.5811 DKK 542
+Hay About A Lounge Chair Grey/Oak Art.71580 DKK 1316
+Hay About A Lounge Sofa Grey/Black (alt) Art.71566 DKK 2351
+Arne Jacobsen The Egg Beige Yacht Leather Art.4321 DKK 3401
+Hollywood Lounge Stool White (2-seater) Art.2617 DKK 592
+Hollywood Lounge Stool White (triangle) Art.2611 DKK 444
+Hollywood Lounge Stool White Art.2615 DKK 434
+Lounge-Bar Brown Art.2793 DKK 99
+Hollywood Backrest White Art.2619 DKK 365
 
 Puffer:
-Pouf Mochi Deep Blue Ø70 Art.192539 DKK 600
-Pouf Mochi Light Blue Ø70 Art.192538 DKK 600
-Pouf Mochi Light Grey Ø70 Art.192537 DKK 600
-Pouf Mochi Characol Black Ø70 Art.192536 DKK 600
-Leather Pouf Grey Art.192518 DKK 739
-Leather Pouf Cognac Art.192520 DKK 739
-Leather Pouf Olive Green Art.192519 DKK 739
+Pouf Mochi Deep Blue Art.192539 DKK 600
+Pouf Mochi Light Blue Art.192538 DKK 600
+Pouf Mochi Light Grey Art.192537 DKK 600
+Pouf Mochi Charcoal Black Art.192536 DKK 600
+Leather Pouf Grey Art.192518 DKK 650
+Leather Pouf Cognac Art.192520 DKK 650
+Leather Pouf Olive Green Art.192519 DKK 650
+Lounge Stool Beige Art.6048 DKK (pris mangler)
 
 UDENDØRS LOUNGE:
 Net Relax Chair Ocean Art.6015 DKK 91
 Net Relax Chair Taupe Art.6016 DKK 91
 Net Relax Chair Mustard Art.6017 DKK 91
 Net Relax Chair Coral Red Art.6018 DKK 91
-Komodo Arm Chair Taupe Art.71246 DKK 690
-Komodo 2-seater Taupe Art.71247 DKK 1217
-Komodo 3-seater Taupe Art.71248 DKK 1745
-Komodo 5-seater L-shape Taupe Art.71249 DKK 2997
-Komodo Lounge Table Taupe Art.71250 DKK 463
+Net Bench Ocean Art.6042 DKK 320
+Net Bench Coral Red Art.6043 DKK 320
+PRDK String Chair Petrol Art.192846 DKK 474
+PRDK String Chair Beige Art.192847 DKK 474
+PRDK String Chair White Art.192845 DKK 474
+Komodo 5-Seater L-shape Taupe Art.71249 DKK 2997
+Komodo 3-Seater Taupe Art.71248 DKK 1745
+Komodo Armchair Taupe Art.71246 DKK 690
 Granada Lounge Chair Black/Creme Art.71212 DKK 695
 Granada Lounge Sofa Black/Creme Art.71214 DKK 1380
-Granada Lounge Table Black/Glass Art.71215 DKK 976
+Beach Lounger Blue/Poplar Tree Art.1971450 DKK 172
+Net Relax Chair w. Seat Ocean Art.71270 DKK 116
+Net Relax Chair w. Seat Taupe Art.71271 DKK 116
+Net Relax Chair w. Seat Mustard Art.71272 DKK 116
+Net Relax Chair w. Seat Coral Red Art.71273 DKK 116
+Net Bench w. Seat Ocean Art.71274 DKK 369
+Net Bench w. Seat Coral Red Art.71275 DKK 369
+Komodo 2-Seater Taupe Art.71247 DKK 1217
+Komodo Lounge Stool Taupe Art.71245 DKK 315
+Bench Black Art.195086 DKK 501
 
 BAR & RECEPTION:
-Bornholm Bar W200xD70xH95 Art.72208 DKK 2810
-Bornholm Bar with Front W200xD83xH215 Art.72210 DKK 4191
-Bar/Buffet Black/Steel W200xD70xH95 Art.72691 DKK 2307
-Bar/Buffet White/Grey W200xD70xH95 Art.72106 DKK 1972
-Bar/Buffet White/Steel W200xD70xH95 Art.72206 DKK 1972
-Buffet Bar White with LED W200xD70xH95 Art.72351 DKK 3066
-Nordic Counter Bar Black W122xD48xH110 Art.9010 DKK 450
-St. Tropez High Counter White W180xD70xH108 Art.60047 DKK 1099
-St. Tropez High Counter White W70xD70xH108 Art.60039 DKK 680
-Plano Info Counter White W120xD60xH90 Art.2303 DKK 1725
+Bornholm Bar / Buffet Wood/Steel Top Art.72208 DKK 2810
+Bornholm Bar with Front Wood/Steel Top Art.72210 DKK 4191
+Bar / Buffet Black/Steel Top Art.72691 DKK 2307
+Bar / Buffet White/Steel Top Art.72206 DKK 1972
+Bar / Buffet White/Black Top Art.72106 DKK 1972
+Bar 1/8 Round LED Front White/Steel Top Art.72656 DKK 4521
+Buffet Bar White with LED White/White Top Art.72351 DKK 3066
+Bar with LED Front White/Silver/Grey Art.72116 DKK 2736
+St. Tropez High Counter White Art.60039 DKK 680
+St. Tropez High Counter White Art.60047 DKK 1099
+St. Tropez Counter White Art.60046 DKK 1030
+Plano Info Counter White Art.2303 DKK 1725
+Plano-1 Info Counter White/Black Art.72741 DKK 2095
+Nordic Counter Bar Black Art.9010NCB DKK 450
+
+REOLER:
+Bornholm Rack, 5 Shelves Wood/Black Steel Art.72231 DKK 2538
+Bornholm Rack, 5 Shelves Wood/Black Steel Art.72230 DKK 2267
+Design Shelf w. Wheels White Art.3156 DKK 2711
+Design Shelf w. Wheels White Art.3152 DKK 1626
+Metal Rack Basic Chrome Art.76120 DKK 574
+Wardrobe Shelves Grey Art.3446 DKK 1084
+Shelving Unit Double White Art.1972230 DKK (pris mangler)
+Shelving Unit Double Black Art.1972231 DKK (pris mangler)
+Shelving Unit Double White Art.1972233 DKK 557
+Shelving Unit Double Black Art.1972234 DKK 557
+Shelving Unit Single White Art.1972236 DKK 557
+Shelving Unit Single Black Art.1972235 DKK 557
 
 GULVTÆPPER:
-Carpet Burnt Curry W200xD300 Art.194091 DKK 807
-Carpet Silky White W200xD300 Art.194092 DKK 807
-Carpet Dark Grey W200xD300 Art.194090 DKK 807
-Carpet Dark Blue W200xD300 Art.194093 DKK 807
-Carpet Light Grey W200xD300 Art.194086 DKK 807
-Carpet Bordeaux W200xD300 Art.194095 DKK 807
-Carpet Persian Pattern W200xD300 Art.194096 DKK 807
-Carpet Moss Green W200xD300 Art.194094 DKK 807
-Carpet Artificial Grass Ø6m Art.194066 DKK 1099
-Carpet Tile Anthracite W100xD100 Art.1193 DKK 35
+Carpet Natural Art.194082 DKK 807
+Carpet Caramel Art.194083 DKK 807
+Carpet Sand Grey Art.194084 DKK 807
+Carpet Burnt Curry Art.194091 DKK 807
+Carpet Silky White Art.194092 DKK 807
+Carpet Orange Art.194097 DKK 807
+Carpet Anthracite Green Art.194085 DKK 807
+Carpet Light Grey Art.194086 DKK 807
+Carpet Dark Green Art.194087 DKK 807
+Carpet Forest Green Art.194088 DKK 807
+Carpet Warm Brown Art.194089 DKK 807
+Carpet Terracotta Art.194090 DKK 807
+Carpet Dark Blue Art.194093 DKK 807
+Carpet Bordeaux Art.194095 DKK 807
+Carpet Persian Pattern Art.194096 DKK 807
+Carpet Moss Green Art.194094 DKK 807
+Carpet Pink Art.194098 DKK 807
+Carpet Blush Rose Art.194099 DKK 807
+Carpet Artificial Grass Green Art.194066 DKK 1099
+Carpet Tile Anthracite Art.1193 DKK 35
+Sheep Skin Off White Art.194392 DKK 73
+Sheep Skin Salt & Pepper Art.194393 DKK 73
 
 PUDER:
-Pillow Dark Blue Art.195717 DKK 44
-Pillow Red Art.195714 DKK 44
-Pillow Petroleum Art.195715 DKK 44
 Pillow Cream White Art.195719 DKK 44
-Pillow Curry Art.195718 DKK 44
 Pillow Yellow Art.195713 DKK 44
-Pillow Forrest Green Art.195716 DKK 44`;
+Pillow Dark Blue Art.195717 DKK 44
+Pillow Curry Art.195718 DKK 44
+Pillow Forest Green Art.195716 DKK 44
+Pillow Petroleum Art.195715 DKK 44
+Pillow Red Art.195714 DKK 44
+Pillow Dusty Rose Art.9010PL DKK 44
+
+BELYSNING:
+LED Cube White/LED Art.193213 DKK 290
+LED Cube White/LED Art.193212 DKK 340
+LED Cube White/LED Art.192601L DKK 377
+Flowerpot Table Lamp Swim Blue/Battery Art.193394 DKK 202
+Fatboy Table Lamp White/Battery Art.1915 DKK 212
+Calida Nano Table Lamp Black/Dimmable Art.191915 DKK 283
+
+PLANTER:
+Hanging Plants Various Artificial Green Art.193871 DKK (pris mangler)
+Potted Plants Various Artificial Green Art.193870 DKK (pris mangler)
+Preserved Flower Arrangements Dried Flowers Art.193886 DKK (pris mangler)
+Pot Potted Plants Wicker Art.193872 DKK (pris mangler)
+Pot Potted Plants Black Art.193882 DKK (pris mangler)
+Pot Potted Plants White Art.193883 DKK (pris mangler)
+
+DIVERSE:
+Coat Rack Standing Black Wood Art.192262 DKK 272
+Wardrobe Stand Mobile 40 hangers Art.2263 DKK 221
+Tensabarrier Chrome/Black Art.2302 DKK 251
+Barring Rope Deep Red Art.2548 DKK 67
+Picket Fence w. Base White Art.192282 DKK 123
+Ashtray Standing Chrome Art.1554 DKK 158
+Pushboy Trashcan White/Chrome Art.2312 DKK 212
+Full Length Mirror Mobile Mirror/Black Art.192269 DKK 190
+Lectern Transparent Acrylic Art.192251 DKK 876
+Folder Stand Perforated Metal Art.193142 DKK 417
+Whiteboard Magnetic White/Metal Art.192297 DKK 1479
+MHLB Office Chair Black/Chrome/Wheels Art.195722 DKK 802
+
+SERVICE - PORCELÆN:
+Freestyle Craft Plate Green Art.6431 DKK 10.85
+Freestyle Craft Plate Green Art.6434 DKK 4.34
+Freestyle Craft Bowl Green Art.6435 DKK 4.34
+Freestyle Craft Bowl Blue Art.6445 DKK 4.34
+Freestyle Craft Plate White Art.6461 DKK 10.85
+Freestyle Mysa Plate Sand Grey Art.9791 DKK 4.93
+Freestyle Mysa Plate Mountain Blue Art.9785 DKK 4.93
+Freestyle Mysa Plate Ocean Art.9782 DKK 4.93
+Freestyle Mysa Plate Lake Green Art.9766 DKK 4.93
+Jade Plate White Art.4835 DKK 3.25
+Jade Deep Plate White Art.4837 DKK 3.25
+Jade Coupe Plate White Art.4875 DKK 4.14
+Standard Plate White Art.1396 DKK 3.35
+Standard Plate White Art.1395 DKK 2.17
+Standard Deep Plate White Art.1397 DKK 2.17
+Standard Coffee Cup White Art.1391 DKK 2.17
+Jade Coffee Cup White Art.4830 DKK 3.25
+Jade Cappuccino Cup White Art.4851 DKK 3.25
+
+SERVICE - BESTIK:
+Arts Table Fork Stainless Art.4062 DKK 3.06
+Arts Table Knife Stainless Art.4061 DKK 3.06
+Arts Table Spoon Stainless Art.4063 DKK 3.06
+Arts Steak Knife Stainless Art.4075 DKK 3.06
+Arts Dessert Fork Stainless Art.4065 DKK 3.06
+Arts Dessert Spoon Stainless Art.4066 DKK 3.06
+Arts Cake Fork Stainless Art.4068 DKK 3.06
+Arts Coffee Spoon Stainless Art.4067 DKK 3.06
+Standard Table Fork Stainless Art.1242 DKK 2.27
+Standard Table Knife Stainless Art.1241 DKK 2.27
+Standard Table Spoon Stainless Art.1243 DKK 2.27
+
+SERVICE - GLAS:
+Vina Wine Glass Clear Art.4164 DKK 2.96
+Vina Claret Glass Clear Art.4165 DKK 2.96
+Vina Champagne Flute Clear Art.4170 DKK 2.96
+Vina Burgundy Glass Clear Art.4163 DKK 2.96
+Vina Water Glass Clear Art.4162 DKK 2.96
+Exclusive Small Wine Clear Art.4204 DKK 2.56
+Exclusive Large Wine Clear Art.4203 DKK 2.56
+Exclusive Champagne Clear Art.4210 DKK 2.56
+Schnaps Glass Clear Art.1207 DKK 2.27
+Cognac Glass Clear Art.1211 DKK 2.27
+Martini Glass Diva Clear Art.4257 DKK 3.35
+Whisky Glass Clear Art.1214 DKK 2.27
+Longdrink Glass Clear Art.1213 DKK 2.27
+Caipirinha Glass Clear Art.1219 DKK 2.27
+Water Tumbler Grey, Thin Art.6036 DKK 3.35
+Tossa Schnaps Glass Clear Art.4277 DKK 4.14
+
+SERVICE - SERVERING:
+Carafe Glass Art.191366 DKK 7.65
+Water Carafe Glass Art.1566 DKK 11.83
+Hotello Tea Jug Double-walled Thermo Art.1510 DKK 76.42
+Table Number Holder Chrome Art.1544 DKK 29.09
+Universal Tongs Black Plastic Art.1279 DKK 12.82
+Weck Preserving Jar Glass Art.1470 DKK 2.66
+
+KØKKENUDSTYR:
+Mondo 2 Coffee Maker 230V/2020W Art.1701 DKK 345.1
+Mondo Twin Coffee Maker 230V/3240W Art.1703 DKK 542.3
+B5E 10 L Coffee Maker 400V/3kW Art.1705 DKK 1133.9
+B20E 2×20 L Coffee Maker 400V/9.3kW Art.1707 DKK 2243.15
+Thermo Jug Stainless 18/10 Art.1532 DKK 19.72
+Hotello Thermo Jug Double-walled Art.1511 DKK 81.35
+Serving Trolley 3 Shelves Art.1845 DKK 384.54
+Heating Lamp on Base Warm White/230V Art.1847 DKK 369.75
+Hot Pot Soup Kettle 230V/0.4kW Art.1605 DKK 251.43
+Chocolate Fountain Sephra 230V/510W Art.1676 DKK 2218.5
+Banket Wine Cooler Brushed Stainless Art.191536 DKK 124
+Chafing Dish Lid + roller Art.1602 DKK 251.43
+Gastronorm Pan 1/1 GN Art.1619 DKK 34.51
+Gastronorm Pan 1/1 GN Art.1625 DKK 54.23
+Gastronorm Pan 1/2 GN Art.1622 DKK 24.65
+Refrigerator w. Glass Door 145 L/2 Grates Art.1753 DKK 517.65
+Refrigerator w. Glass Door 360 L/3 Grates Art.1749 DKK 616.25
+Refrigerator Mobile 500 L/3 Grates Art.1759 DKK 2415.7
+Chest Freezer Mobile 350 L Art.1756 DKK 936.7
+Hot Cupboard Mobile 22 Pans/2kW Art.1839 DKK 1479
+Sink Unit w. Boiler 10 L/2kW Art.2276 DKK 813.45
+Rational SCC 201 20 Pans 400V/37kW Art.1695 DKK 8775.4
+Rational SCC 101 10 Pans 400V/19kW Art.1691 DKK 4683.5
+Fan Forced Oven 400V/17kW Art.1859 DKK 3204.5
+Industrial Dishwasher Push-through Art.2277 DKK 6359.7
+Dishwasher Front Loading 230V/3.3kW Art.2274 DKK 2711.5
+Induction Counter Top Bartscher/230V Art.1897 DKK 877.54
+Electric Range w. Oven 400V/17kW Art.1789 DKK 2711.5
+Double Deep Fat Fryer 2×10 L/230V Art.1776 DKK 877.54`;
 
 // ─── CLIENT-SIDE: feltdefinitioner til UI (injiceres via doGet) ───────────────
 
@@ -368,3 +564,4 @@ const UI_PRODUCT_DATA = {
   "1960772":{p:818,s:0,w:0,v:0,c:0},"1971564":{p:726,s:0,w:0,v:0,c:0},
   "1971565":{p:1227,s:0,w:0,v:0,c:0}
 };
+

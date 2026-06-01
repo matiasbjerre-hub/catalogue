@@ -57,6 +57,10 @@ textarea:focus{outline:none;border-color:#534AB7}
 .section-products{padding:0 .5rem}
 .section-add-row{display:flex;gap:8px;padding:.5rem .75rem;border-top:1px solid #f0ede8;background:#fafaf8;align-items:center;flex-wrap:wrap}
 .section-subtotal{font-size:12px;color:#666;padding:.35rem .75rem;text-align:right;border-top:1px solid #f0ede8}
+#micBtn{display:inline-flex;align-items:center;padding:.55rem .85rem;border:1px solid #ddd;border-radius:8px;font-size:18px;line-height:1;cursor:pointer;background:#fff;transition:background .2s}
+#micBtn:hover{background:#f5f4f0}
+#micBtn.recording{background:#fee2e2;border-color:#fca5a5;animation:pulse 1s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.45}}
 </style>
 </head>
 <body>
@@ -85,7 +89,9 @@ textarea:focus{outline:none;border-color:#534AB7}
         <span data-t="uploadBtn">Upload fil</span>
         <input type="file" id="fileInput" accept=".txt,.eml,.csv,.xls,.xlsx,.pdf" style="display:none" onchange="loadFile(event)">
       </label>
+      <button id="micBtn" onclick="toggleMic()" title="Dikter via mikrofon">🎙</button>
       <button class="btn" id="clearBtn" onclick="clearAll()" data-t="clearBtn">Ryd</button>
+      <button id="cartAddBtn" class="btn btn-p" onclick="sendCartToParent()" style="display:none">Tilføj til kurv</button>
       <button id="suggestToggle" onclick="toggleSuggest()" style="display:flex;align-items:center;gap:.45rem;padding:.38rem .75rem .38rem .55rem;border-radius:999px;border:1.5px solid #d1d5db;background:#fff;cursor:pointer;font-family:inherit;font-size:13px;font-weight:500;color:#374151;transition:all .2s">
         <span id="suggestDot" style="width:10px;height:10px;border-radius:50%;background:#22c55e;flex-shrink:0;transition:background .2s"></span>
         <span id="suggestLabel">Møbelforslag til</span>
@@ -123,7 +129,7 @@ textarea:focus{outline:none;border-color:#534AB7}
       </div>
       <div class="price-summary" id="priceSummary"></div>
     </div>
-    <div class="card">
+    <div id="emailCard" class="card">
       <div class="eh">
         <div class="lbl" style="margin-bottom:0" data-t="replyTitle">Forslag til svar</div>
         <button class="btn btn-sm" id="copyBtn" onclick="copyEmail()" data-t="copyBtn">Kopiér</button>
@@ -138,6 +144,9 @@ const FIELD_DEFS = <?!= fieldDefsJson ?>;
 
 const PRODUCT_DATA = <?!= productDataJson ?>;
 
+var APP_MODE = "<?= mode ?>";
+var cartItems = [];
+var lastSuggestions = "";
 
 let lastReply = "";
 var currentProducts = []; // kept for backward compat
@@ -160,7 +169,7 @@ function analyse(){
   document.getElementById("results").classList.add("hidden");
   document.getElementById("loading").classList.remove("hidden");
   document.getElementById("clearBtn").style.display="";
-  google.script.run.withSuccessHandler(onSuccess).withFailureHandler(onError).analyseEmail(email);
+  google.script.run.withSuccessHandler(onSuccess).withFailureHandler(onError).analyseEmail(email, APP_MODE, currentLang, JSON.stringify(cartItems));
 }
 
 function onSuccess(data){
@@ -172,13 +181,27 @@ function onSuccess(data){
   }
   if(suggestProducts) renderPriceCalc(data.fields.productSuggestions?.value);
   autoFillTimeline(data.fields);
-  const webshopUrl = "https://www.party.rent/da/webshop";
-  lastReply = data.emailReply.replace("WEBSHOP_LINK", webshopUrl);
-  const linkedReply = data.emailReply.replace(
-    "WEBSHOP_LINK",
-    '<a href="' + webshopUrl + '" target="_blank" style="color:inherit">europæiske sortiment</a>'
-  );
-  document.getElementById("emailOut").innerHTML = linkedReply.replace(/\n/g, "<br>");
+  var emailCard = document.getElementById("emailCard");
+  if(APP_MODE === "web" || !data.emailReply) {
+    if(emailCard) emailCard.classList.add("hidden");
+  } else {
+    if(emailCard) emailCard.classList.remove("hidden");
+    const webshopUrl = "https://www.party.rent/da/webshop";
+    lastReply = data.emailReply.replace("WEBSHOP_LINK", webshopUrl);
+    const linkedReply = data.emailReply.replace(
+      "WEBSHOP_LINK",
+      '<a href="' + webshopUrl + '" target="_blank" style="color:inherit">europæiske sortiment</a>'
+    );
+    document.getElementById("emailOut").innerHTML = linkedReply.replace(/\n/g, "<br>");
+  }
+  var sugg = data.fields.productSuggestions && data.fields.productSuggestions.value;
+  if(APP_MODE === "web" && sugg){
+    lastSuggestions = sugg;
+    document.getElementById("cartAddBtn").style.display = "";
+  } else {
+    lastSuggestions = "";
+    document.getElementById("cartAddBtn").style.display = "none";
+  }
   document.getElementById("results").classList.remove("hidden");
 }
 
@@ -190,11 +213,14 @@ function onError(err){
 }
 
 var currentLang = 'da';
+document.addEventListener('DOMContentLoaded', function(){ applyStrings(); });
 
 var STRINGS = {
   da: {
     emailLabel:'Kundens e-mail',
+    emailLabelWeb:'Forespørgsel / Brief',
     emailPlaceholder:'Indsæt kundens tilbudsforespørgsel her…',
+    emailPlaceholderWeb:'Beskriv arrangementet, stil, farver og ønsker — eller indsæt en kundes e-mail…',
     analyseBtn:'Analysér e-mail →',
     demoBtn:'Indlæs demo-e-mail',
     uploadBtn:'Upload fil',
@@ -236,47 +262,49 @@ var STRINGS = {
     errPrefix:'Fejl: '
   },
   en: {
-    emailLabel:'Customer email',
-    emailPlaceholder:'Paste the customer’s quotation request here…',
-    analyseBtn:'Analyse email →',
-    demoBtn:'Load demo email',
-    uploadBtn:'Upload file',
-    clearBtn:'Clear',
-    loadingText:'Analysing… (15-30 sec.)',
-    matrixTitle:'Information matrix',
-    priceTitle:'Price calculator',
-    rentalDaysLabel:'Rental days:',
-    discountLabel:'Discount (%):',
-    factorPrefix:'Factor:',
-    colProduct:'Product',
-    colArtNr:'Art.no',
-    colStock:'Stock',
-    colDayPrice:'Daily rate',
-    colQty:'Qty',
-    colSubtotal:'Subtotal',
-    addArtNrPlaceholder:'Art.no (e.g. 1007)',
-    addNamePlaceholder:'Product name',
-    addBtn:'+ Add product',
-    addSetupDay:'+ Setup day',
-    addTakedownDay:'+ Takedown day',
-    replyTitle:'Suggested reply',
-    copyBtn:'Copy',
-    copiedBtn:'Copied!',
-    notSpecified:'Not specified',
-    confirmed:'confirmed',
-    unclear:'unclear',
-    missing:'missing',
-    labelSetup:'Setup',
-    labelTakedown:'Takedown',
-    rentalTotal:'Rental total',
-    day:'day',
-    days:'days',
-    factor:'factor',
-    discountRow:'Discount',
-    cleaning:'Cleaning',
-    totalExclVat:'Total excl. VAT',
-    totalInclVat:'Total incl. 25% VAT',
-    errPrefix:'Error: '
+    emailLabel:"Customer email",
+    emailLabelWeb:"Request / Brief",
+    emailPlaceholder:"Paste the customer’s quotation request here…",
+    emailPlaceholderWeb:"Describe the event, style, colours and wishes — or paste a customer email…",
+    analyseBtn:"Analyse email →",
+    demoBtn:"Load demo email",
+    uploadBtn:"Upload file",
+    clearBtn:"Clear",
+    loadingText:"Analysing… (15-30 sec.)",
+    matrixTitle:"Information matrix",
+    priceTitle:"Price calculator",
+    rentalDaysLabel:"Rental days:",
+    discountLabel:"Discount (%):",
+    factorPrefix:"Factor:",
+    colProduct:"Product",
+    colArtNr:"Art.no",
+    colStock:"Stock",
+    colDayPrice:"Daily rate",
+    colQty:"Qty",
+    colSubtotal:"Subtotal",
+    addArtNrPlaceholder:"Art.no (e.g. 1007)",
+    addNamePlaceholder:"Product name",
+    addBtn:"+ Add product",
+    addSetupDay:"+ Setup day",
+    addTakedownDay:"+ Takedown day",
+    replyTitle:"Suggested reply",
+    copyBtn:"Copy",
+    copiedBtn:"Copied!",
+    notSpecified:"Not specified",
+    confirmed:"confirmed",
+    unclear:"unclear",
+    missing:"missing",
+    labelSetup:"Setup",
+    labelTakedown:"Takedown",
+    rentalTotal:"Rental total",
+    day:"day",
+    days:"days",
+    factor:"factor",
+    discountRow:"Discount",
+    cleaning:"Cleaning",
+    totalExclVat:"Total excl. VAT",
+    totalInclVat:"Total incl. 25% VAT",
+    errPrefix:"Error: "
   }
 };
 
@@ -291,10 +319,12 @@ function setLang(lang){
 
 function applyStrings(){
   document.querySelectorAll('[data-t]').forEach(function(el){
-    el.textContent = T(el.getAttribute('data-t'));
+    var key = el.getAttribute('data-t');
+    if(APP_MODE === 'web' && key === 'emailLabel') key = 'emailLabelWeb';
+    el.textContent = T(key);
   });
   var ei = document.getElementById('emailIn');
-  if(ei) ei.placeholder = T('emailPlaceholder');
+  if(ei) ei.placeholder = T(APP_MODE === 'web' ? 'emailPlaceholderWeb' : 'emailPlaceholder');
   var ld = document.getElementById('loading');
   if(ld) ld.innerHTML = '<div class="spinner"></div>'+T('loadingText');
   renderSections();
@@ -859,6 +889,70 @@ function loadFile(event){
     reader3.readAsText(file,"UTF-8");
   }
   event.target.value="";
+}
+
+// ─── Fase 3: Speech recognition ────────────────────────────────────────────
+var micRecognition = null;
+var micActive = false;
+(function(){
+  var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if(!SR){ var b = document.getElementById('micBtn'); if(b) b.style.display = 'none'; }
+})();
+function toggleMic(){
+  var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if(!SR) return;
+  if(micActive){
+    try{ micRecognition.stop(); }catch(e){}
+    return;
+  }
+  micRecognition = new SR();
+  micRecognition.continuous = false;
+  micRecognition.interimResults = false;
+  micRecognition.lang = currentLang === 'en' ? 'en-US' : 'da-DK';
+  micRecognition.onresult = function(e){
+    var transcript = Array.from(e.results).map(function(r){ return r[0].transcript; }).join(' ');
+    var ta = document.getElementById('emailIn');
+    ta.value = (ta.value ? ta.value + '\n' : '') + transcript;
+    document.getElementById("clearBtn").style.display = "";
+  };
+  micRecognition.onerror = function(){ stopMicUI(); };
+  micRecognition.onend = function(){ stopMicUI(); };
+  micRecognition.start();
+  micActive = true;
+  var b = document.getElementById('micBtn');
+  if(b){ b.classList.add('recording'); b.title = 'Stop optagelse'; }
+}
+function stopMicUI(){
+  micActive = false;
+  var b = document.getElementById('micBtn');
+  if(b){ b.classList.remove('recording'); b.title = 'Dikter via mikrofon'; }
+}
+
+// ─── Fase 5: postMessage integration ───────────────────────────────────────
+window.addEventListener('message', function(e){
+  if(!e.data || e.data.type !== 'cart') return;
+  cartItems = e.data.items || [];
+});
+function sendCartToParent(){
+  if(!lastSuggestions) return;
+  var items = [];
+  var hasSections = /\[[^\]]+\]\s*:/.test(lastSuggestions);
+  var flat = hasSections
+    ? lastSuggestions.replace(/\[[^\]]+\]\s*:\s*/g, '').replace(/;\s*/g, ', ')
+    : lastSuggestions;
+  flat.split(/,\s*/).forEach(function(s){
+    s = s.trim();
+    if(!/Art\./i.test(s)) return;
+    var am = s.match(/Art\.([A-Za-z0-9+]+)/);
+    var qm = s.match(/x(\d+)/i);
+    var nm = s.replace(/\s*Art\.\S+/gi,'').replace(/\s*x\d+/gi,'').replace(/\s*DKK\s*\d+/gi,'').trim();
+    items.push({ art: am ? am[1] : null, qty: qm ? parseInt(qm[1]) : 1, name: nm });
+  });
+  items = items.filter(function(x){ return x.art; });
+  var target = window.opener || window.parent;
+  try { target.postMessage({ type: 'addToCart', items: items }, '*'); } catch(e2) {}
+  document.getElementById("cartAddBtn").textContent = "✓ Tilføjet!";
+  setTimeout(function(){ document.getElementById("cartAddBtn").textContent = "Tilføj til kurv"; }, 2000);
 }
 </script>
 </body>
