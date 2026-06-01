@@ -1,0 +1,5 @@
+assets/_packshots_backup/
+uploads/
+screenshots/
+*.zip
+data.js
