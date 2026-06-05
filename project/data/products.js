@@ -28,7 +28,7 @@ window.PRODUCTS = [
   p("chairs", "dinner", "Hay — About A Chair",          "Black / Oak",          "W59×D52×H79 cm  SH46",  "70492", 207, "charcoal"),
   p("chairs", "dinner", "Hay — About A Chair Swivel",   "Black / Pepper-Salt",  "W59×D52×H79 cm  SH46",  "4628",  271, "stone"),
   p("chairs", "dinner", "DSW — Eames Chair",            "White / Maple",        "W46×D52×H83.5 cm SH46", "70251", 165, "ivory"),
-  p("chairs", "dinner", "DSW — Eames Chair",            "Mustard / Maple",      "W46×D52×H83.5 cm SH46", "70252", 165, "mustard"),
+  p("chairs", "dinner", "DSW — Eames Chair",            "Black / Maple",        "W46×D52×H83.5 cm SH46", "70252", 165, "charcoal"),
   p("chairs", "dinner", "DSW — Eames Chair",            "Sea Blue / Maple",     "W46×D52×H83.5 cm SH46", "70289", 165, "petrol"),
   p("chairs", "dinner", "Hay — Hee Dining Chair",       "Black",                "W48×D48×H79 cm  SH46",  "4647",  123, "charcoal"),
   p("chairs", "dinner", "Skool Chair",                  "Wood / Black",         "W43×D51×H85 cm  SH45",  "2039",  71,  "oak"),
@@ -348,7 +348,7 @@ window.PRODUCTS = [
   p("kitchen", "", "Double Deep Fat Fryer",             "2×10 L / 230V",        "W76×D50×H36 cm",        "1776",  877.54,"chrome"),
   // ─── ADDITIONAL FROM CATALOGUE SCREENSHOTS ──────────────────────────────
   // Variants & extras from the Rent.Group Scandinavia catalogue
-  p("chairs", "dinner", "DSW — Eames Chair",            "Mustard / Maple",      "W59×D52×H79 cm  SH46",  "70253", 165, "mustard"),
+  p("chairs", "dinner", "DSW — Eames Chair",            "Mustard / Maple",      "W46×D52×H83.5 cm SH46", "70253", 165, "mustard"),
   p("chairs", "bar", "Hay — About A Stool",             "White / Oak (low)",    "W40×D47×H86 cm  SH75",  "71151", 266, "ivory"),
   p("chairs", "bar", "Hay — About A Stool",             "White / Black",        "W40×D47×H86 cm  SH75",  "71152", 266, "ivory"),
   p("tables", "high", "Bristol — Sylt High Table",      "Oak / Chrome",         "W160×D80×H110 cm",      "1960772",793,"oak"),
