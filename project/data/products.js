@@ -65,7 +65,6 @@ window.PRODUCTS = [
   p("chairs", "bar", "PRDK Industrial Barstool",        "Metallic Grey",        "W42×D42×H77 cm",        "194782",172, "stone"),
   p("chairs", "bar", "PRDK Industrial Barstool",        "Black",                "W42×D42×H77 cm",        "194784",172, "charcoal"),
   p("chairs", "bar", "PRDK Industrial Barstool",        "White",                "W42×D42×H77 cm",        "194783",172, "ivory"),
-  p("chairs", "bar", "PRDK Upholstered Barstool",       "Cognac / Black",       "W43.5×D50×H91 cm",      "192086",198, "cognac"),
   p("chairs", "bar", "Skool Barstool",                  "Wood / Black",         "W43×H76 cm",            "192037",159, "oak"),
   p("chairs", "bar", "Lem — Adjustable Barstool",       "White / Chrome",       "W37×D42×H75-86 cm",     "71061", 244, "ivory"),
   p("chairs", "bar", "Hee Barstool",                    "Black",                "W40×D47×H86 cm  SH75",  "4648",  167, "charcoal"),
@@ -355,7 +354,7 @@ window.PRODUCTS = [
   // ─── ADDITIONAL FROM CATALOGUE SCREENSHOTS ──────────────────────────────
   // Variants & extras from the Rent.Group Scandinavia catalogue
   p("chairs", "dinner", "DSW — Eames Chair",            "Mustard / Maple",      "W46×D52×H83.5 cm SH46", "70253", 165, "mustard"),
-  p("chairs", "bar", "Hay — About A Stool",             "White / Oak (low)",    "W40×D47×H86 cm  SH75",  "71151", 266, "ivory"),
+  p("chairs", "bar", "Hay — About A Stool",             "Black / Oak",          "W40×D47×H86 cm  SH75",  "71151", 266, "charcoal"),
   p("chairs", "bar", "Hay — About A Stool",             "White / Black",        "W40×D47×H86 cm  SH75",  "71152", 266, "ivory"),
   p("tables", "high", "Bristol — Sylt High Table",      "Oak / Chrome",         "W160×D80×H110 cm",      "1960772",793,"oak"),
   p("tables", "high", "St. Tropez — Bridge Table (high)","White",               "W70×D70×H108 cm",       "60045", 508, "ivory"),

@@ -267,11 +267,10 @@ function Catalogue() {
     }).
     slice() // don't mutate
     .sort((a, b) => {
-      // Group by sub first (preserves the existing sub-section split),
-      // then by brand prefix, then by full name + variant.
-      if (a.sub !== b.sub) return (a.sub || "").localeCompare(b.sub || "");
-      const ba = brandOf(a),bb = brandOf(b);
+      // Brand first, then type (sub), then name + variant.
+      const ba = brandOf(a), bb = brandOf(b);
       if (ba !== bb) return ba.localeCompare(bb);
+      if (a.sub !== b.sub) return (a.sub || "").localeCompare(b.sub || "");
       if (a.name !== b.name) return a.name.localeCompare(b.name);
       return a.variant.localeCompare(b.variant);
     });
