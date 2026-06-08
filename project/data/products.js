@@ -16,10 +16,16 @@ window.CATEGORIES = [
   { id: "kitchen",     sub: [] },
 ];
 
+// Art numbers of products that can withstand being outdoors — marked with the
+// raindrop icon. Source of truth: the raindrop icon in Catalogue Scandinavia (Canva).
+const OUTDOOR = new Set([
+]);
+
 // Helper to keep product lines short
 const p = (cat, sub, name, variant, dims, art, price, tint) => ({
   id: String(art).replace(/[^a-z0-9]/gi, "") + "-" + name.replace(/[^a-z0-9]/gi, "").slice(0, 6).toLowerCase(),
   cat, sub, name, variant, dims, art: String(art), price, tint,
+  outdoor: OUTDOOR.has(String(art)),
 });
 
 window.PRODUCTS = [
@@ -130,8 +136,8 @@ window.PRODUCTS = [
   p("lounge", "sofas", "Arne Jacobsen — The Swan",      "Beige Yacht Leather",  "W74×D68×H77 cm  SH40",  "3995",  2218,"linen"),
   p("lounge", "sofas", "Heelack — Lounge Chair",        "Black",                "W73×D67×H66 SH37",      "4646",  419, "charcoal"),
   p("lounge", "sofas", "Freistil — 173 Lounge Chair",   "Navy Blue",            "W76×D82×H75 cm  SH40",  "4983",  779, "petrol"),
-  p("lounge", "sofas", "Freistil — 173 Lounge Chair",   "Bordeaux Red",         "W76×D82×H75 cm  SH40",  "4986",  779, "red"),
-  p("lounge", "sofas", "Freistil — 173 Lounge Chair",   "Anthracite Grey",      "W76×D82×H75 cm  SH40",  "4987",  779, "stone"),
+  p("lounge", "sofas", "Freistil — 173 Lounge Chair",   "Beige / Deauville Bouclé",     "W76×D82×H75 cm  SH40",  "4986",  779, "linen"),
+  p("lounge", "sofas", "Freistil — 173 Lounge Chair",   "Sage Green / Trouville Bouclé","W76×D82×H75 cm  SH40",  "4987",  779, "olive"),
   p("lounge", "sofas", "Nordic Touch — Lounge Sofa",    "Grey / Black",         "W125×D62×H83 cm",       "1971565",1227,"stone"),
   p("lounge", "sofas", "Nordic Touch — Lounge Chair",   "Grey / Black",         "W58×D55×H82 cm",        "1971564",726, "stone"),
   p("lounge", "sofas", "Soft Peak Beanbag",             "Sand Grey",            "105×135×H80 cm",        "192642",621, "linen"),

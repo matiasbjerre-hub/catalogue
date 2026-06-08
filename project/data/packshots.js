@@ -113,6 +113,8 @@
     "4647":        "assets/packshots/4647.png",
     "4648":        "assets/packshots/4648.png",
     "4983":        "assets/packshots/4983.png",
+    "4986":        "assets/packshots/4986.png",
+    "4987":        "assets/packshots/4987.png",
     "5092":        "assets/packshots/5092.png",
     "5811":        "assets/packshots/5811.png",
     "5824":        "assets/packshots/5824.png",
