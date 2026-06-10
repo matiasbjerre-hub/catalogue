@@ -9,7 +9,8 @@ const Icon = {
   Search: (p) => <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" {...p}><circle cx="11" cy="11" r="7" /><path d="M21 21l-4.3-4.3" /></svg>,
   Cart: (p) => <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...p}><path d="M3 3h2l3 13h11l2-8H6" /><circle cx="9" cy="20" r="1.5" /><circle cx="17" cy="20" r="1.5" /></svg>,
   Arrow: (p) => <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...p}><path d="M5 12h14M13 6l6 6-6 6" /></svg>,
-  Tag: (p) => <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...p}><path d="M20 12L12 4H4v8l8 8 8-8z" /><circle cx="8" cy="8" r="1.5" fill="currentColor" /></svg>
+  Tag: (p) => <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...p}><path d="M20 12L12 4H4v8l8 8 8-8z" /><circle cx="8" cy="8" r="1.5" fill="currentColor" /></svg>,
+  Droplet: (p) => <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" {...p}><path d="M12 2.5S5.5 10 5.5 15a6.5 6.5 0 0 0 13 0c0-5-6.5-12.5-6.5-12.5z" /></svg>
 };
 
 // ─── Format helpers ────────────────────────────────────────────────────────
@@ -193,6 +194,9 @@ function BrandLogo({ variant }) {
 // ─── Category icons (line-art) ────────────────────────────────────────────
 const CategoryIcon = {
   chairs: (p) => <svg viewBox="0 0 64 64" width="56" height="56" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" {...p}>
+    <path d="M24 34 V14 Q32 10 40 14 V34" /><path d="M24 24 H40" /><rect x="18" y="34" width="28" height="4" /><path d="M21 38 V54" /><path d="M43 38 V54" /><path d="M19 47 H45" />
+  </svg>,
+  barstools: (p) => <svg viewBox="0 0 64 64" width="56" height="56" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" {...p}>
     <path d="M22 14 H42 V40 H22 Z" /><path d="M22 14 V8 H42 V14" /><path d="M22 40 V54" /><path d="M42 40 V54" /><path d="M19 54 H45" />
   </svg>,
   tables: (p) => <svg viewBox="0 0 64 64" width="56" height="56" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" {...p}>

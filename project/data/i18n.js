@@ -25,6 +25,7 @@ window.I18N = {
     },
     cat: {
       chairs: "Stole",
+      barstools: "Barstole",
       tables: "Borde",
       lounge: "Lounge",
       bars: "Barer & buffeter",
@@ -58,6 +59,7 @@ window.I18N = {
       filter_all: "Alle",
       add: "Tilføj",
       added: "Tilføjet",
+      outdoor: "Kan tåle at stå udendørs",
       price_day: "/ dag",
       price_request: "Pris på forespørgsel",
       art: "Vare-nr.",
@@ -171,6 +173,7 @@ window.I18N = {
     },
     cat: {
       chairs: "Chairs",
+      barstools: "Bar stools",
       tables: "Tables",
       lounge: "Lounge",
       bars: "Bars & buffets",
@@ -204,6 +207,7 @@ window.I18N = {
       filter_all: "All",
       add: "Add",
       added: "Added",
+      outdoor: "Suitable for outdoor use",
       price_day: "/ day",
       price_request: "Price on request",
       art: "Art.no.",
@@ -317,6 +321,7 @@ window.I18N = {
     },
     cat: {
       chairs: "Stolar",
+      barstools: "Barstolar",
       tables: "Bord",
       lounge: "Lounge",
       bars: "Barer & bufféer",

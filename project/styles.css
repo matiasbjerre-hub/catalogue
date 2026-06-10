@@ -547,6 +547,12 @@ a { color: inherit; text-decoration: none; }
   text-transform: uppercase;
   line-height: 1.25;
 }
+.card__name .card__outdoor {
+  display: inline-flex;
+  vertical-align: middle;
+  margin-left: 5px;
+  color: #5b9bd5;
+}
 .card__variant {
   font-size: 13px;
   color: var(--muted);

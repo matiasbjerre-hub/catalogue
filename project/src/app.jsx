@@ -375,7 +375,10 @@ function ProductCard({ product }) {
         {inCart || pulse ? <Icon.Check /> : <Icon.Plus />}
       </button>
       <div className="card__body">
-        <div className="card__name">{product.name}</div>
+        <div className="card__name">
+          {product.name}
+          {product.outdoor && <span className="card__outdoor" title={t.catalogue.outdoor}><Icon.Droplet /></span>}
+        </div>
         <div className="card__variant">{product.variant}</div>
         <div className="card__meta">
           <span className="card__art-num">Art. {product.art}</span>

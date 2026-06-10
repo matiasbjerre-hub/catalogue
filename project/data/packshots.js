@@ -340,6 +340,11 @@
     "wm1104":      "assets/packshots/wm1104.png",
     "wm1115":      "assets/packshots/wm1115.png",
     "wm1123":      "assets/packshots/wm1123.png",
+    "6048":        "assets/packshots/6048.png",
+    "60039":       "assets/packshots/60039.png",
+    "60046":       "assets/packshots/60046.png",
+    "70354":       "assets/packshots/70354.png",
+    "72106":       "assets/packshots/72106.png",
   };
 
   // Fallback pools per category / sub.

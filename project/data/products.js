@@ -3,7 +3,8 @@
 // Tints drive the placeholder color until real product photography is in.
 
 window.CATEGORIES = [
-  { id: "chairs",      sub: ["dinner", "bar"] },
+  { id: "chairs",      sub: ["dinner"] },
+  { id: "barstools",   sub: [] },
   { id: "tables",      sub: ["high", "dinner", "lounge"] },
   { id: "lounge",      sub: ["sofas", "poufs", "outdoor"] },
   { id: "bars",        sub: [] },
@@ -19,6 +20,27 @@ window.CATEGORIES = [
 // Art numbers of products that can withstand being outdoors — marked with the
 // raindrop icon. Source of truth: the raindrop icon in Catalogue Scandinavia (Canva).
 const OUTDOOR = new Set([
+  // chairs / dinner
+  "4647", "2039", "1040", "2167", "194766", "194772", "2037", "wm1123",
+  "2185", "2186", "1007",
+  // chairs / bar
+  "192084", "2085", "194782", "194784", "194783", "4648",
+  // tables / dinner
+  "191127", "191134", "191135", "191112", "1960520", "1960521", "wm1030", "wm1031",
+  // tables / lounge
+  "71250", "71215", "194608", "194609", "1960250", "72091", "72096",
+  // lounge / sofas
+  "4646",
+  // lounge / outdoor
+  "6015", "6016", "6017", "6018", "6042", "6043", "192846", "192847",
+  "192845", "71249", "71248", "71246", "71212", "71214", "1971450", "71270",
+  "71271", "71272", "71273", "71274", "71275", "71247", "71245", "195086",
+  // shelving
+  "72231", "72230", "76120",
+  // carpets / carpets
+  "194082", "194083", "194084", "194091", "194092", "194097", "194085", "194086",
+  "194087", "194088", "194089", "194090", "194093", "194095", "194096", "194094",
+  "194098", "194099", "194066", "1193", "194392", "194393",
 ]);
 
 // Helper to keep product lines short
@@ -56,18 +78,19 @@ window.PRODUCTS = [
   p("chairs", "dinner", "Linda Chair",                  "Black / Chrome",       "W46×D48×H83 cm  SH48",  "wm1104",25,  "charcoal"),
 
   // ─── CHAIRS — Bar Stools ─────────────────────────────────────────────────
-  p("chairs", "bar", "Padova Bar Stool",                "Leather, White",       "W54×D50×H103.5 cm SH78","2054",  200, "linen"),
-  p("chairs", "bar", "Padova Bar Stool",                "Leather, Black",       "W54×D50×H103.5 cm SH78","2056",  200, "charcoal"),
-  p("chairs", "bar", "Hay — About A Stool",             "White / Oak",          "W40×D47×H86 cm  SH75",  "71150", 266, "ivory"),
-  p("chairs", "bar", "Hay — About A Stool",             "Black / Black",        "W40×D47×H86 cm  SH75",  "71153", 266, "charcoal"),
-  p("chairs", "bar", "Pedrali — Kuadra Barstool",       "White / Chrome",       "W51 cm  SH77",          "192084",142, "ivory"),
-  p("chairs", "bar", "Bonello Barstool",                "White",                "W50×D54×H102 cm SH72",  "2085",  98,  "ivory"),
-  p("chairs", "bar", "PRDK Industrial Barstool",        "Metallic Grey",        "W42×D42×H77 cm",        "194782",172, "stone"),
-  p("chairs", "bar", "PRDK Industrial Barstool",        "Black",                "W42×D42×H77 cm",        "194784",172, "charcoal"),
-  p("chairs", "bar", "PRDK Industrial Barstool",        "White",                "W42×D42×H77 cm",        "194783",172, "ivory"),
-  p("chairs", "bar", "Skool Barstool",                  "Wood / Black",         "W43×H76 cm",            "192037",159, "oak"),
-  p("chairs", "bar", "Lem — Adjustable Barstool",       "White / Chrome",       "W37×D42×H75-86 cm",     "71061", 244, "ivory"),
-  p("chairs", "bar", "Hee Barstool",                    "Black",                "W40×D47×H86 cm  SH75",  "4648",  167, "charcoal"),
+  p("barstools", "", "Padova Bar Stool",                "Leather, White",       "W54×D50×H103.5 cm SH78","2054",  200, "linen"),
+  p("barstools", "", "Padova Bar Stool",                "Leather, Black",       "W54×D50×H103.5 cm SH78","2056",  200, "charcoal"),
+  p("barstools", "", "Hay — About A Stool",             "White / Oak",          "W40×D47×H86 cm  SH75",  "71150", 266, "ivory"),
+  p("barstools", "", "Hay — About A Stool",             "Black / Black",        "W40×D47×H86 cm  SH75",  "71153", 266, "charcoal"),
+  p("barstools", "", "Pedrali — Kuadra Barstool",       "White / Chrome",       "W51 cm  SH77",          "192084",142, "ivory"),
+  p("barstools", "", "Bonello Barstool",                "White",                "W50×D54×H102 cm SH72",  "2085",  98,  "ivory"),
+  p("barstools", "", "PRDK Industrial Barstool",        "Metallic Grey",        "W42×D42×H77 cm",        "194782",172, "stone"),
+  p("barstools", "", "PRDK Industrial Barstool",        "Black",                "W42×D42×H77 cm",        "194784",172, "charcoal"),
+  p("barstools", "", "PRDK Industrial Barstool",        "White",                "W42×D42×H77 cm",        "194783",172, "ivory"),
+  p("barstools", "", "PRDK Upholstered Barstool",       "Cognac / Black",       "W43.5×D50×H91 cm",      "192086",198, "cognac"),
+  p("barstools", "", "Skool Barstool",                  "Wood / Black",         "W43×H76 cm",            "192037",159, "oak"),
+  p("barstools", "", "Lem — Adjustable Barstool",       "White / Chrome",       "W37×D42×H75-86 cm",     "71061", 244, "ivory"),
+  p("barstools", "", "Hee Barstool",                    "Black",                "W40×D47×H86 cm  SH75",  "4648",  167, "charcoal"),
 
   // ─── TABLES — High & Bar ─────────────────────────────────────────────────
   p("tables", "high", "Sylt — High Table",              "Oak / Chrome",         "W180×D80×H110 cm",      "1960192",705,"oak"),
@@ -354,8 +377,8 @@ window.PRODUCTS = [
   // ─── ADDITIONAL FROM CATALOGUE SCREENSHOTS ──────────────────────────────
   // Variants & extras from the Rent.Group Scandinavia catalogue
   p("chairs", "dinner", "DSW — Eames Chair",            "Mustard / Maple",      "W46×D52×H83.5 cm SH46", "70253", 165, "mustard"),
-  p("chairs", "bar", "Hay — About A Stool",             "Black / Oak",          "W40×D47×H86 cm  SH75",  "71151", 266, "charcoal"),
-  p("chairs", "bar", "Hay — About A Stool",             "White / Black",        "W40×D47×H86 cm  SH75",  "71152", 266, "ivory"),
+  p("barstools", "", "Hay — About A Stool",             "Black / Oak",          "W40×D47×H86 cm  SH75",  "71151", 266, "charcoal"),
+  p("barstools", "", "Hay — About A Stool",             "White / Black",        "W40×D47×H86 cm  SH75",  "71152", 266, "ivory"),
   p("tables", "high", "Bristol — Sylt High Table",      "Oak / Chrome",         "W160×D80×H110 cm",      "1960772",793,"oak"),
   p("tables", "high", "St. Tropez — Bridge Table (high)","White",               "W70×D70×H108 cm",       "60045", 508, "ivory"),
   p("tables", "high", "PRDK — High Table",              "Black",                "Ø70 H110 cm",           "192589",166, "charcoal"),
