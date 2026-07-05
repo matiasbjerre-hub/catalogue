@@ -101,6 +101,45 @@ function RfqButton() {
   );
 }
 
+// Inline SVG flags for the language switcher (robust across OS; not emoji).
+const FLAGS = {
+  da: (
+    <svg width="20" height="14" viewBox="0 0 20 14" aria-hidden="true" style={{ display: "block" }}>
+      <rect width="20" height="14" fill="#c8102e" />
+      <rect x="6" width="2" height="14" fill="#fff" />
+      <rect y="6" width="20" height="2" fill="#fff" />
+    </svg>
+  ),
+  en: (
+    <svg width="20" height="14" viewBox="0 0 20 14" aria-hidden="true" style={{ display: "block" }}>
+      <rect width="20" height="14" fill="#012169" />
+      <path d="M0 0 20 14M20 0 0 14" stroke="#fff" strokeWidth="2.8" />
+      <path d="M0 0 20 14M20 0 0 14" stroke="#c8102e" strokeWidth="1.2" />
+      <rect x="8" width="4" height="14" fill="#fff" />
+      <rect y="5" width="20" height="4" fill="#fff" />
+      <rect x="8.6" width="2.8" height="14" fill="#c8102e" />
+      <rect y="5.6" width="20" height="2.8" fill="#c8102e" />
+    </svg>
+  ),
+  no: (
+    <svg width="20" height="14" viewBox="0 0 20 14" aria-hidden="true" style={{ display: "block" }}>
+      <rect width="20" height="14" fill="#ba0c2f" />
+      <rect x="5" width="4" height="14" fill="#fff" />
+      <rect y="5" width="20" height="4" fill="#fff" />
+      <rect x="6" width="2" height="14" fill="#00205b" />
+      <rect y="6" width="20" height="2" fill="#00205b" />
+    </svg>
+  ),
+  sv: (
+    <svg width="20" height="14" viewBox="0 0 20 14" aria-hidden="true" style={{ display: "block" }}>
+      <rect width="20" height="14" fill="#006aa7" />
+      <rect x="6" width="2" height="14" fill="#fecc00" />
+      <rect y="6" width="20" height="2" fill="#fecc00" />
+    </svg>
+  ),
+};
+const LANG_LABELS = { da: "Dansk", en: "English", no: "Norsk", sv: "Svenska" };
+
 // ─── Header ────────────────────────────────────────────────────────────────
 function Header() {
   const { t, lang, setLang } = useI18n();
@@ -139,9 +178,9 @@ function Header() {
           </nav>
           <div className="header-tools">
             <div className="lang">
-              {["da", "en", "sv"].map((code) =>
-              <button key={code} data-active={lang === code} onClick={() => setLang(code)}>
-                  {code.toUpperCase()}
+              {["da", "en", "no", "sv"].map((code) =>
+              <button key={code} data-active={lang === code} onClick={() => setLang(code)} title={LANG_LABELS[code]} aria-label={LANG_LABELS[code]}>
+                  {FLAGS[code]}
                 </button>
               )}
             </div>

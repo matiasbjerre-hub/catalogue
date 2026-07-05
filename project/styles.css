@@ -1102,3 +1102,13 @@ a { color: inherit; text-decoration: none; }
 }
 .rfq-btn:hover { opacity: .85; }
 .rfq-btn--active { opacity: .7; cursor: default; }
+
+/* Flag language switcher (flags replace the DA/EN/NO/SV letters) */
+.lang button { padding: 5px 6px; line-height: 0; opacity: 0.55; transition: opacity 0.15s ease; }
+.lang button svg { display: block; }
+.lang button:hover { opacity: 1; }
+.lang button[data-active="true"] { opacity: 1; border-bottom-color: var(--ink); }
+
+/* Embedded in the four-app hub: hide the duplicate Rent.Group logos (the hub has its own) */
+html.embedded .site-header a[href="#top"] { display: none; }
+html.embedded .site-footer .footer-brand-img { display: none; }
