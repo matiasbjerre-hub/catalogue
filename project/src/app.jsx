@@ -276,10 +276,6 @@ function CategoryShortcuts() {
   return (
     <section className="cat-shortcuts">
       <div className="wrap">
-        <div className="cat-shortcuts__head">
-          <p>{t.shortcuts.eyebrow}</p>
-          <h2>{t.shortcuts.title}</h2>
-        </div>
         <div className="cat-shortcuts__grid">
           {cats.map((c) => {
             const Ico = CategoryIcon[c.id] || CategoryIcon.misc;
