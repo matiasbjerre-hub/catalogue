@@ -1,6 +1,10 @@
 // Party.Rent Denmark — main app  (Westmans-inspired clean direction)
 const { useState: useStateA, useEffect: useEffectA, useMemo: useMemoA, useRef: useRefA } = React;
 
+// True when this catalogue is embedded (framed) inside the four-app hub. Used to
+// drop the marketing hero (video + copy + buttons) in the combined view.
+const IS_EMBEDDED = (function () { try { return window.top !== window.self; } catch (e) { return true; } })();
+
 // ─── Tweak defaults — direct-edit persisted ───────────────────────────────
 const TWEAKS_DEFAULTS = /*EDITMODE-BEGIN*/{
   "accent": "#C9B998",
@@ -28,7 +32,8 @@ function App() {
     <I18nCtx.Provider value={{ t, lang, setLang }}>
       <CartProvider>
         <Header />
-        <Hero tweaks={tweaks} />
+        <ScandiBanner />
+        {!IS_EMBEDDED && <Hero tweaks={tweaks} />}
         {tweaks.showShortcuts && <CategoryShortcuts />}
         <Catalogue />
         {tweaks.showInspiration && <Inspiration />}
@@ -139,6 +144,18 @@ const FLAGS = {
   ),
 };
 const LANG_LABELS = { da: "Dansk", en: "English", no: "Norsk", sv: "Svenska" };
+
+// Notice under the top menu: local Scandinavian selection vs the European webshop.
+function ScandiBanner() {
+  const { t } = useI18n();
+  const b = (t && t.banner) || { text: "", link: "" };
+  return (
+    <div className="scandi-banner">
+      {b.text}
+      <a href="https://party.rent/da/webshop" target="_blank" rel="noopener noreferrer">{b.link}</a>
+    </div>
+  );
+}
 
 // ─── Header ────────────────────────────────────────────────────────────────
 function Header() {

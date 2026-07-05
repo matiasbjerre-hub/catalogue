@@ -1,6 +1,7 @@
 // Party.Rent Denmark — i18n (Danish / English / Swedish)
 window.I18N = {
   da: {
+    banner: { text: "Denne side indeholder vores lokale skandinaviske udvalg — for vores europæiske udvalg klik ", link: "her" },
     locale: "da-DK",
     currency: "DKK",
     nav: {
@@ -149,6 +150,7 @@ window.I18N = {
   },
 
   en: {
+    banner: { text: "This website contains our local Scandinavian selection — for our European selection click ", link: "here" },
     locale: "en-DK",
     currency: "DKK",
     nav: {
@@ -297,6 +299,7 @@ window.I18N = {
   },
 
   sv: {
+    banner: { text: "Den här webbplatsen innehåller vårt lokala skandinaviska sortiment — för vårt europeiska sortiment klicka ", link: "här" },
     locale: "sv-SE",
     currency: "DKK",
     nav: {
@@ -444,6 +447,7 @@ window.I18N = {
   },
 
   no: {
+    banner: { text: "Denne siden inneholder vårt lokale skandinaviske utvalg — for vårt europeiske utvalg klikk ", link: "her" },
     locale: "nb-NO",
     currency: "DKK",
     nav: {
