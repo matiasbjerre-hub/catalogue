@@ -154,14 +154,14 @@ function Header() {
               <a href="tel:+4531767671">{t.footer.phone}</a>
               {" — "}
               <a href="mailto:copenhagen@rent.group">{t.footer.email}</a>
-              {" — "}
+              <br />
               {t.footer.top_bar}
             </span>
             <span className={!cphActive ? "topbar-office topbar-office--active" : "topbar-office"}>
               <a href="tel:+4640497400">{t.footer.phone_malmo}</a>
               {" — "}
-              <a href="mailto:malmo@party.rent">{t.footer.email_malmo}</a>
-              {" — "}
+              <a href="mailto:malmo@rent.group">{t.footer.email_malmo}</a>
+              <br />
               {t.footer.top_bar_malmo}
             </span>
           </div>
@@ -604,7 +604,7 @@ function Footer() {
             <div className="footer-office-divider" />
             <div className={!cphActive ? "footer-office footer-office--active" : "footer-office"}>
               <a href="tel:+4640497400">{t.footer.phone_malmo}</a><br />
-              <a href="mailto:malmo@party.rent">{t.footer.email_malmo}</a>
+              <a href="mailto:malmo@rent.group">{t.footer.email_malmo}</a>
             </div>
           </div>
           <div>
