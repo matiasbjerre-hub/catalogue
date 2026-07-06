@@ -1131,3 +1131,24 @@ html.embedded .site-footer .footer-brand-img { display: none; }
   text-underline-offset: 2px;
 }
 .scandi-banner a:hover { color: var(--ink); }
+
+/* Help "?" in the header with a hover/focus tutorial tooltip */
+.help {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 22px; height: 22px; border-radius: 50%;
+  border: 1px solid var(--line-2); color: var(--muted);
+  font-family: var(--font-mono); font-size: 12px; font-weight: 600;
+  cursor: help; position: relative; user-select: none; flex: 0 0 auto;
+}
+.help:hover, .help:focus { border-color: var(--ink); color: var(--ink); outline: none; }
+.help .help-tip {
+  position: absolute; top: calc(100% + 8px); right: 0; left: auto; z-index: 60;
+  width: 300px; max-width: 80vw;
+  background: var(--ink); color: var(--paper);
+  font-family: var(--font-ui); font-size: 13px; font-weight: 400; line-height: 1.5;
+  text-transform: none; letter-spacing: normal; text-align: left;
+  padding: 12px 14px; border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+  opacity: 0; visibility: hidden; transition: opacity 0.15s; pointer-events: none;
+}
+.help:hover .help-tip, .help:focus .help-tip { opacity: 1; visibility: visible; }

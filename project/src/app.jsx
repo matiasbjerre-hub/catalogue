@@ -157,6 +157,15 @@ function ScandiBanner() {
   );
 }
 
+// Small "?" help button in the header with a hover/focus tutorial (English).
+function HelpTip() {
+  return (
+    <span className="help" tabIndex={0} role="button" aria-label="How to use this site">?
+      <span className="help-tip">Browse our local Scandinavian rental range by category. Click a category to filter the products, add items to your request, and change language with the flags. “Get furniture suggestions” opens the RFQ tool. For the full European range, use the webshop link at the top of the page.</span>
+    </span>
+  );
+}
+
 // ─── Header ────────────────────────────────────────────────────────────────
 function Header() {
   const { t, lang, setLang } = useI18n();
@@ -194,6 +203,7 @@ function Header() {
             <a href="#contact">{t.nav.contact}</a>
           </nav>
           <div className="header-tools">
+            <HelpTip />
             <div className="lang">
               {["da", "en", "no", "sv"].map((code) =>
               <button key={code} data-active={lang === code} onClick={() => setLang(code)} title={LANG_LABELS[code]} aria-label={LANG_LABELS[code]}>
